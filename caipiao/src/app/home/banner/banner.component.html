@@ -1,0 +1,8 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper" [appFastClick]="-1" (onFastClick)="selectBanner($event)">
+    <div class="swiper-slide" *ngFor="let item of bannerList">
+      <img src="{{item.imgUrl}}" [attr.data-url]="item.targetUrl">
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>

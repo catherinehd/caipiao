@@ -1,0 +1,28 @@
+@import "../../../assets/css/variable"
+
+.btn-group
+  .get-btn
+    font-size $font-small-size
+    height 3rem
+    width 8rem
+    color $theme-blue-color
+    background-color $theme-white-color
+    border 1px solid $theme-blue-color
+    border-radius @height
+    &[disabled]
+      border 1px solid $font-weak-color
+      color $font-weak-color
+
+.btn-box
+  padding-top 4.4rem
+
+.error
+  color $theme-red-color
+  font-size 1.3rem
+  padding-left 1.5rem
+  padding-top 1.5rem
+  svg
+    width 1.2rem
+    height @width
+    margin-right .5rem
+    fill $theme-red-color

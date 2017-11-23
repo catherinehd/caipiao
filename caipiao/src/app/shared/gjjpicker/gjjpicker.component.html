@@ -1,0 +1,47 @@
+<section class="picker-sec" appFastClick (onFastClick)="cancel()" [@fadeInOutByState]="isgjjPickerShow ? 'active' : 'inactive'">
+  <div class="picker-panel" [@moveUpDownAnimation]="isgjjPickerShow ? 'active' : 'inactive'">
+    <div class="panel-header">
+      <p>请上下拖动列表以选择项目</p>
+      <button appFastClick (onFastClick)="confirm()">确定</button>
+    </div>
+
+
+    <div class="panel-body" style="height: 96px;">
+      <ul>
+        <li *ngFor="let item of list" (onSelected)="selected(item)">{{item}}</li>
+      </ul>
+    </div>
+
+  </div>
+
+    <!--<div class="panel-body" >-->
+      <!--<div class="mid-panel"></div>-->
+      <!--<div class="scroll-box" *ngFor="let subList of list">-->
+        <!--<ul appPicker (onSelected)="selected($event)">-->
+          <!--<li></li>-->
+          <!--<li></li>-->
+          <!--<li>{{subList}}</li>-->
+          <!--<li></li>-->
+          <!--<li></li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</div>-->
+</section>
+
+
+    <!--<div class="panel-body" *ngIf="!isMulty">-->
+      <!--<div class="mid-panel"></div>-->
+      <!--<div class="scroll-box">-->
+        <!--<ul appPicker (onSelected)="selected($event)">-->
+          <!--<li></li>-->
+          <!--<li></li>-->
+          <!--<li *ngFor="let item of list">{{item.name}}</li>-->
+          <!--<li></li>-->
+          <!--<li></li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+

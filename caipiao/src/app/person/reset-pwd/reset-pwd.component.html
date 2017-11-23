@@ -1,0 +1,80 @@
+<app-nav [title]="'修改密码'" [showConfig]="{isArrowShow: true}"></app-nav>
+
+<section class="form-sec">
+  <div class="form" [formGroup]="pwdSettingForm">
+    <div class="form-field">
+      <span class="item-title">旧密码：</span>
+      <input type="password" placeholder="请输入旧密码" formControlName="oldpwd" maxlength="15">
+      <!--<div class="btn-group">-->
+        <!--<button *ngIf="pwdSettingForm.value.pwd" class="close-btn" appFastClick (onFastClick)="clear('pwd')">-->
+          <!--<svg class="icon-close">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-close"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+        <!--<button class="eye-btn" *ngIf="!isEyesOpen.pwd" appFastClick (onFastClick)="isEyesOpen.pwd = true">-->
+          <!--<svg class="icon-open-eyes">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-open-eyes"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+        <!--<button class="eye-btn" *ngIf="isEyesOpen.pwd" appFastClick (onFastClick)="isEyesOpen.pwd = false">-->
+          <!--<svg class="icon-close-eyes">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-close-eyes"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+      <!--</div>-->
+    </div>
+    <div class="form-field">
+      <span class="item-title">新密码：</span>
+      <input type="password" placeholder="请输入新密码（6-15位组成）" formControlName="pwd" maxlength="15">
+      <!--<div class="btn-group">-->
+        <!--<button *ngIf="pwdSettingForm.value.pwd" class="close-btn" appFastClick (onFastClick)="clear('pwd')">-->
+          <!--<svg class="icon-close">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-close"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+        <!--<button class="eye-btn" *ngIf="!isEyesOpen.pwd" appFastClick (onFastClick)="isEyesOpen.pwd = true">-->
+          <!--<svg class="icon-open-eyes">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-open-eyes"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+        <!--<button class="eye-btn" *ngIf="isEyesOpen.pwd" appFastClick (onFastClick)="isEyesOpen.pwd = false">-->
+          <!--<svg class="icon-close-eyes">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-close-eyes"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+      <!--</div>-->
+    </div>
+    <div class="form-field">
+      <span class="item-title">确认密码：</span>
+      <input type="password" placeholder="请再次输入新密码" formControlName="pwdAgain" maxlength="15">
+      <!--<div class="btn-group">-->
+        <!--<button class="close-btn" *ngIf="pwdSettingForm.value.pwdAgain" appFastClick (onFastClick)="clear('pwdAgain')">-->
+          <!--<svg class="icon-close">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-close"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+        <!--<button class="eye-btn" *ngIf="!isEyesOpen.pwdAgain" appFastClick (onFastClick)="isEyesOpen.pwdAgain = true">-->
+          <!--<svg class="icon-open-eyes">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-open-eyes"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+        <!--<button class="eye-btn" *ngIf="isEyesOpen.pwdAgain" appFastClick (onFastClick)="isEyesOpen.pwdAgain = false">-->
+          <!--<svg class="icon-close-eyes">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-close-eyes"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+      <!--</div>-->
+    </div>
+  </div>
+  <div class="error" *ngIf="msg">
+    <svg>
+      <use xlink:href="assets/icon/symbol-defs.svg#icon-tip"></use>
+    </svg>
+    {{msg}}</div>
+  <div class="btn-box">
+    <button [disabled]="!pwdSettingForm.value.oldpwd || !pwdSettingForm.value.pwd || !pwdSettingForm.value.pwdAgain" class="form-btn" type="button" appFastClick (onFastClick)="onSubmit()">修改密码</button>
+  </div>
+</section>
+
+<!--<app-fly-msg [msg]="msg"></app-fly-msg>-->
+<app-loading *ngIf="isLoading"></app-loading>

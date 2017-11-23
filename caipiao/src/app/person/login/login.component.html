@@ -1,0 +1,55 @@
+<app-nav [title]="'登录'" [showConfig]="{isCloseShow: true, isRegisterShow: true}"></app-nav>
+
+<section class="form-sec">
+  <div class="form" [formGroup]="loginForm">
+    <div class="form-field">
+      <label class="form-label">手机号</label>
+      <input type="tel" placeholder="请输入手机号" formControlName="tel" [appTelFormat]="telControl" maxlength="13" (change)="testIfRegisted()">
+      <div class="btn-group" *ngIf="loginForm.value.tel">
+        <button class="close-btn" appFastClick (onFastClick)="clear('tel')">
+          <svg class="icon-close">
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="form-field">
+      <label class="form-label">密&nbsp;&nbsp;&nbsp;码</label>
+      <input [type]="!isOpenEyesShow ? 'text': 'password'" placeholder="请输入密码" formControlName="pwd">
+      <div class="btn-group">
+        <button class="close-btn" appFastClick (onFastClick)="clear('pwd')" *ngIf="loginForm.value.pwd">
+          <svg class="icon-close">
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+        <button class="eye-btn" *ngIf="!isOpenEyesShow" appFastClick (onFastClick)="isOpenEyesShow = true">
+          <svg class="icon-open-eyes">
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-open-eyes"></use>
+          </svg>
+        </button>
+        <button class="eye-btn" *ngIf="isOpenEyesShow" appFastClick (onFastClick)="isOpenEyesShow = false">
+          <svg class="icon-close-eyes">
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-close-eyes"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="error" *ngIf="msg">
+    <svg>
+      <use xlink:href="/assets/icon/symbol-defs.svg#icon-tip"></use>
+    </svg>
+    {{msg}}
+  </div>
+  <button class="form-tip" type="button" appFastClick (onFastClick)="pushToForgetPwd()">忘记密码？</button>
+  <div class="btn-box">
+    <button class="form-btn" [disabled]="!loginForm.value.tel || !loginForm.value.pwd" type="button" appFastClick (onFastClick)="onSubmit()">登录</button>
+  </div>
+</section>
+
+<!--<p class="footer-tip" appFastClick (onFastClick)="isAgreementShow = true">登录即表示您同意<span class="agreement"> 用户服务协议</span></p>-->
+
+<!--<app-fly-msg [msg]="msg"></app-fly-msg>-->
+<app-loading *ngIf="isLoading"></app-loading>
+<!--<app-agreement *ngIf="isAgreementShow" (onClose)="isAgreementShow = false"></app-agreement>-->
+

@@ -1,0 +1,11 @@
+<app-nav [title]="'修改昵称'" [showConfig]="{isArrowShow: true, isSaveShow: true}" (onSave)="onSave()"></app-nav>
+
+<section class="setting-sec">
+  <span>昵称：</span>
+  <input type="text" [placeholder]="name" [formControl]="nickName" autofocus>
+  <svg class="icon-close" appFastClick (onFastClick)="clear()" *ngIf="nickName.value">
+    <use xlink:href="assets/icon/symbol-defs.svg#icon-del2"></use>
+  </svg>
+</section>
+
+<app-fly-msg [msg]="msg"></app-fly-msg>

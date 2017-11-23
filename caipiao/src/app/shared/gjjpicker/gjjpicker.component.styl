@@ -1,0 +1,75 @@
+@import "../../../assets/css/variable"
+
+.picker-sec
+  position fixed
+  top 0
+  width 100%;
+  height 100%;
+  background-color rgba(0,0,0,.4);
+  z-index 3
+
+.picker-panel
+  position absolute
+  bottom 0
+  width 100%
+  background-color #fff
+
+.panel-header
+  display flex
+  background-color $body-color
+  line-height 4rem
+  border-bottom $default-border
+  p
+    flex auto
+    font-size $font-small-size
+    color $font-sub-color
+    padding-left 1.2rem
+  button
+    color $theme-blue-color
+    font-size $font-big-size
+    padding 0 1.2rem
+
+.panel-body
+  display flex
+  position relative
+  .scroll-box
+    position relative
+    height 16rem
+    flex auto
+    overflow hidden
+    transition transform 150 ease
+  ul
+    position absolute
+    width 100%
+    text-align center
+    line-height 3.2rem
+    font-size $font-small-size
+    color #d3d3d4
+    z-index 1
+  li
+    height 3.2rem
+    transition: all 180ms
+  .mid-panel
+    position absolute
+    width 100%
+    height 3.2rem
+    top @height * 2
+    background-color $body-color
+    border-top $default-border
+    border-bottom $default-border
+    z-index 0
+  .pre-un-active
+    transform: perspective(200px) rotateX(50deg);
+  .pre-sub-active
+    color $font-sub-color
+    font-size 1.4rem
+    transform: perspective(200px) rotateX(38deg);
+  .active
+    color $font-main-color
+    font-size $font-bigger-size
+  .next-sub-active
+    color $font-sub-color
+    font-size 1.4rem
+    transform: perspective(200px) rotateX(-38deg);
+  .next-un-active
+    transform: perspective(200px) rotateX(-50deg);

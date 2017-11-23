@@ -1,0 +1,109 @@
+@import "../../../assets/css/variable"
+
+@keyframes lds-ellipsis3
+  0%, 25%
+    left 16%
+    transform scale(0)
+  50%
+    left 16%
+    transform scale(1)
+  75%
+    left 50%
+  100%
+    left 84%
+    transform scale(1)
+
+@keyframes lds-ellipsis2
+  0%
+    transform scale(1)
+  25%, 100%
+    transform scale(0)
+
+@keyframes lds-ellipsis
+  0%
+    left 16%
+    transform scale(0)
+  25%
+    left 16%
+    transform scale(1)
+  50%
+    left 50%
+  75%
+    left 84%
+    transform scale(1)
+  100%
+    left 84%
+    transform scale(0)
+
+@-webkit-keyframes lds-ellipsis
+  0%
+    left 16%
+    transform scale(0)
+  25%
+    left 16%
+    transform scale(1)
+  50%
+    left 50%
+  75%
+    left 50%
+    transform scale(1)
+  100%
+    left 84%
+    transform scale(0)
+
+.lds-ellipsis > div
+  position absolute
+  transform translate(-50%, -50%)
+  width 100px
+  height 10px
+  margin-left 50%
+
+.lds-ellipsis div > div
+  width 10px
+  height 10px
+  border-radius 50%
+  background #f00
+  position absolute
+  top 50%
+  animation: lds-ellipsis 2s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards
+
+.lds-ellipsis div:nth-child(1) div
+  animation lds-ellipsis2 2s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards
+  background #9fc9f3
+
+.lds-ellipsis div:nth-child(2) div
+  animation-delay -1s
+  background #70afed
+
+.lds-ellipsis div:nth-child(3) div
+  animation-delay -0.5s
+  background #4094e7
+
+.lds-ellipsis div:nth-child(4) div
+  animation-delay 0s
+  background: #1079e1
+
+.lds-ellipsis div:nth-child(5) div
+  animation lds-ellipsis3 2s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards
+  background #9fc9f3
+
+.lds-ellipsis
+  position relative
+  height 10px
+  width 100px
+
+.refresh-sec
+  position relative
+  width 100%
+  top 0
+  left 0
+  display flex
+  align-items center
+  justify-content center
+  height 0
+  overflow hidden
+  z-index 2
+  p
+    color $font-sub-color
+    font-size $font-normal-size
+    margin-left 1rem

@@ -1,0 +1,52 @@
+@import "../../../assets/css/variable"
+
+.btn-box
+  padding-top 6rem
+
+.form-field
+  input
+    padding-left 0
+.form
+  margin-top 0
+  background transparent
+    .form-field
+      background $theme-white-color !important
+      .item-title
+        font-size 1.5rem
+        color $font-main-color
+        display inline-block
+        width 8rem
+
+.sec-info
+  line-height 4.2rem
+  font-size $font-small-size
+  color $font-sub-color
+  padding-left 1.5rem
+
+.error
+  color $theme-red-color
+  font-size 1.3rem
+  padding-left 1.5rem
+  padding-top 1rem
+  svg
+    fill $theme-red-color
+    width 1.2rem
+    height @width
+
+.btn-box
+  padding-top 8rem
+
+.footer-tip
+  position fixed
+  width 100%
+  bottom 2.4rem
+  text-align center
+  color $font-sub-color
+  font-size $font-small-size
+  .agreement
+  .tel
+    color $theme-blue-color
+    &:active
+      color-darken()
+  .tel
+    text-decoration underline

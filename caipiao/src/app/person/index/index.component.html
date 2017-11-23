@@ -1,0 +1,53 @@
+<app-nav [title]="'个人中心'" [showConfig]="{}"></app-nav>
+
+<div class="header-padding" appDevicePadding></div>
+<header class="person-header login-header" appFastClick (onFastClick)="pushToUserInfo()">
+  <img class="avatar" src="assets/image/tx.png">
+  <h4 class="name" *ngIf="mobile">{{mobile}}</h4>
+  <!--<svg class="icon-right-arrow" *ngIf="nickName">-->
+    <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>-->
+  <!--</svg>-->
+  <button class="btn" *ngIf="!mobile" appFastClick (onFastClick)="goPage('/login')">未登录</button>
+</header>
+
+<main class="person-main">
+  <ul class="nav-list">
+    <li class="nav-item" appFastClick (onFastClick)="goPage('/reset-pwd')">
+      <div class="item-box">
+        <svg class="icon-pw">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-resetpw"></use>
+        </svg>
+        <p class="title">修改密码</p>
+        <svg class="icon-right-arrow">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>
+        </svg>
+      </div>
+    </li>
+    <li class="nav-item" appFastClick (onFastClick)="goPage('/about-us')">
+      <div class="item-box">
+        <svg class="icon-aboutus">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-aboutus"></use>
+        </svg>
+        <p class="title">关于我们</p>
+        <svg class="icon-right-arrow">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>
+        </svg>
+      </div>
+    </li>
+  </ul>
+  <ul class="nav-list">
+    <li class="nav-item" appFastClick (onFastClick)="goPage('setting')">
+      <div class="item-box">
+        <svg class="icon-setting">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-set"></use>
+        </svg>
+        <p class="title">设置</p>
+        <svg class="icon-right-arrow">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>
+        </svg>
+      </div>
+    </li>
+  </ul>
+</main>
+
+<app-tab></app-tab>

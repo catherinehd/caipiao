@@ -1,0 +1,136 @@
+<app-nav [title]="'首页'" [showConfig]="{}"></app-nav>
+
+<main class="home-sec scroll-container" [appDevicePadding]="44" >
+
+  <div [appRefresh]="refreshChild" (onRefresh)="refresh()" [isRefreshed]="isRefreshed">
+    <div class="search">
+
+    </div>
+    <img class="banner" src="/assets/image/banner.png" />
+    <app-refresh #refreshChild></app-refresh>
+
+    <section class="top-news">
+      
+    </section>
+    <!--<app-banner></app-banner>-->
+    <!--<section class="main-entry">-->
+      <!--<div class="entry-cell" appFastClick (onFastClick)="goPage('/loan')">-->
+      <!--&lt;!&ndash;<div class="entry-cell" appFastClick (onFastClick)="goPage('/loan')">&ndash;&gt;-->
+        <!--<figure>-->
+          <!--<div class="icon-loan-box">-->
+            <!--<svg class="icon-loan">-->
+              <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-loan"></use>-->
+            <!--</svg>-->
+          <!--</div>-->
+          <!--<figcaption class="cell-info">-->
+            <!--<h4 class="main-info">我要贷款</h4>-->
+            <!--<p class="sub-info">1小时到账</p>-->
+          <!--</figcaption>-->
+        <!--</figure>-->
+      <!--</div>-->
+      <!--<div class="entry-cell" appFastClick (onFastClick)="goPage('/insurance')">-->
+      <!--&lt;!&ndash;<div class="entry-cell" appFastClick (onFastClick)="goPage($event, '/insurance')">&ndash;&gt;-->
+        <!--<figure>-->
+          <!--<div class="icon-insurance-box">-->
+            <!--<svg class="icon-insurance">-->
+              <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-insurance"></use>-->
+            <!--</svg>-->
+          <!--</div>-->
+          <!--<figcaption class="cell-info">-->
+            <!--<h4 class="main-info">我要保险</h4>-->
+            <!--<p class="sub-info">精选优惠产品</p>-->
+          <!--</figcaption>-->
+        <!--</figure>-->
+      <!--</div>-->
+    <!--</section>-->
+
+    <!--<section class="sub-entry">-->
+      <!--<figure class="entry-cell" appFastClick (onFastClick)="goPage('/calculator')">-->
+        <!--<svg class="icon-calculator">-->
+          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-calclator"></use>-->
+        <!--</svg>-->
+        <!--<figcaption class="cell-info">通用计算器</figcaption>-->
+      <!--</figure>-->
+      <!--<figure class="entry-cell">-->
+        <!--<svg class="icon-credit">-->
+          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-credit"></use>-->
+        <!--</svg>-->
+        <!--<figcaption class="cell-info">征信查询</figcaption>-->
+      <!--</figure>-->
+      <!--<figure class="entry-cell" appFastClick (onFastClick)="goPage('/rate')">-->
+        <!--<svg class="icon-interest">-->
+          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-interest"></use>-->
+        <!--</svg>-->
+        <!--<figcaption class="cell-info">贷款利率</figcaption>-->
+      <!--</figure>-->
+      <!--<figure class="entry-cell" appFastClick (onFastClick)="goPage('/bank')">-->
+        <!--<svg class="icon-bank">-->
+          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-bank"></use>-->
+        <!--</svg>-->
+        <!--<figcaption class="cell-info">信息服务</figcaption>-->
+      <!--</figure>-->
+    <!--</section>-->
+
+    <!--<section class="loan-panel" *ngIf="loanList.length > 2">-->
+      <!--<div class="panel-header">-->
+        <!--<div class="modify"></div>-->
+        <!--<h4 class="panel-title">热门产品</h4>-->
+        <!--<button class="more-btn" appFastClick (onFastClick)="goPage('/loan')">-->
+          <!--查看更多-->
+          <!--<svg class="icon-right-arrow">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+      <!--</div>-->
+      <!--<ul class="loan-list">-->
+        <!--<li class="loan-item" *ngFor="let loan of loanList" appFastClick (onFastClick)="goPage('./loan-detail/'+loan.id)">-->
+          <!--<figure class="loan-figure">-->
+            <!--<div class="loan-img" [ngStyle]="{'backgroundImage': 'url('+ loan.imgSrc +')'}"></div>-->
+            <!--<figcaption class="loan-info">-->
+              <!--<h4 class="title">{{loan.title}}</h4>-->
+              <!--<div class="detail-box">-->
+                <!--<p class="detail">{{loan.describe}}</p>-->
+                <!--<p *ngIf="loan.feeType === 1" class="interest"><em>{{loan.interest}}%</em>/天</p>-->
+                <!--<p *ngIf="loan.feeType === 2" class="interest"><em>{{loan.interest}}%</em>/月</p>-->
+                <!--<p *ngIf="loan.feeType === 3" class="interest"><em>{{loan.interest}}%</em>/年</p>-->
+              <!--</div>-->
+              <!--<div class="detail-box" [ngSwitch]="loan.typeId">-->
+                <!--<label class="label pretty" *ngSwitchCase="1">小额速贷</label>-->
+                <!--<label class="label large" *ngSwitchCase="2">大额贷</label>-->
+                <!--<label class="label car" *ngSwitchCase="3">购车贷</label>-->
+                <!--<p class="sum">最高<em>{{loan.debtMax}}</em>万额度</p>-->
+              <!--</div>-->
+            <!--</figcaption>-->
+          <!--</figure>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</section>-->
+
+    <!--<section class="insurance-panel" *ngIf="insuranceList.length  > 2">-->
+      <!--<div class="panel-header">-->
+        <!--<div class="modify"></div>-->
+        <!--<h4 class="panel-title">热门保险</h4>-->
+        <!--<button class="more-btn" appFastClick (onFastClick)="goPage('/insurance')">-->
+          <!--查看更多-->
+          <!--<svg class="icon-right-arrow">-->
+            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>-->
+          <!--</svg>-->
+        <!--</button>-->
+      <!--</div>-->
+      <!--<ul class="panel-body">-->
+        <!--<li class="insurance-item" *ngFor="let ins of insuranceList" appFastClick (onFastClick)="openLinks(ins.targetUrl)">-->
+          <!--<figure class="insurance-figure">-->
+            <!--<div class="insurance-img" [ngStyle]="{'backgroundImage': 'url('+ ins.imgSrc +')'}"></div>-->
+            <!--<figcaption class="insurance-info">-->
+              <!--<h4 class="title">{{ins.title}}</h4>-->
+              <!--<p class="detail">{{ins.describe}}</p>-->
+              <!--<strong class="sub-detail">{{ins.subDescribe}}</strong>-->
+            <!--</figcaption>-->
+          <!--</figure>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</section>-->
+  </div>
+</main>
+
+<app-tab></app-tab>
