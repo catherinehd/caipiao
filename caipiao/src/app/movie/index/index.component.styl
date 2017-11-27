@@ -1,0 +1,99 @@
+@import "../../../assets/css/variable.styl"
+
+main
+  padding-bottom 4.8rem
+  .top-movie
+    background-size 100% !important
+    height 11.3rem
+    width 100%
+    position relative
+    margin-bottom 1.5rem
+
+.icon-right-arrow
+  width 1.2rem
+  height @width
+  fill $theme-gray-color
+  vertical-align middle
+
+.movie-item
+  background-color $theme-white-color
+  padding-left 1.5rem
+  &:active
+    bg-darken()
+  &:last-child
+    .hotel-figure
+      border-bottom none
+
+.movie-figure
+  display flex
+  flex-grow 1
+  align-items center
+  padding 1.5rem 1.5rem 1.5rem 0
+  border-bottom $default-border
+  .hotel-img
+  .movie-img
+    width 7rem
+    height 9rem
+    background-size 100% !important
+    bg-img()
+    margin-right 1rem
+    flex none
+  .title
+    font-size $font-normal-size
+    color $font-main-color
+    margin-bottom .8rem
+    line-height 1
+  .movie-info
+    flex auto
+    height 9rem
+.star
+  margin-bottom 2.1rem
+  height 1.3rem
+  line-height 1
+  svg
+    width 1.4rem
+    height 1.3rem
+    fill #ffc62c
+  span
+    color #ffc62c
+    font-size $font-smaller-size
+.detail-box
+  display flex
+  flex auto
+  line-height 1
+  font-size $font-small-size
+  color $font-sub-color
+  justify-content space-between
+  .detail
+    height 1.1rem
+    margin-bottom 1rem
+  .book-num
+    font-size 1.1rem
+    color $theme-blue-color
+    svg
+      fill $theme-blue-color
+      width 1.1rem
+      height .9rem
+      margin-right .35rem
+  .cost
+    font-size 1.8rem
+    color $theme-red-color
+.movie-class
+  font-size $font-smaller-size
+  color $theme-blue-color
+  display flex
+  .time
+    margin-right $font-smaller-size
+    svg
+      fill $theme-blue-color
+  span
+    margin-right 1rem
+    color $theme-blue-color
+    border 1px solid #1ba4dd
+    border-radius .7rem
+    font-size 1rem
+    padding 0 .55rem
+    width 3rem
+    height 1.3rem
+    line-height 1.3rem
+    text-align center

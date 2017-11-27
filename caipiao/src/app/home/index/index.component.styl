@@ -1,5 +1,40 @@
 @import "../../../assets/css/variable.styl"
 
+.nav
+  position fixed
+  top 0
+  left 0
+  width 100%
+  color $theme-white-color
+  height 44px
+  letter-spacing 2px
+  background $theme-blue-color
+  z-index 2
+  input
+    margin 0.5rem auto
+    height 3.4rem
+    width 92%
+    border-radius 17px
+    display block
+    padding-left 39px
+    color $font-main-color
+    font-size $font-normal-size
+    &::placeholder
+      color $theme-blue-color
+  .search-bth
+    position absolute
+    left 30px
+    top 15px
+    width 13px
+    height @width
+    fill $theme-blue-color
+    cursor pointer
+
+.nav-bg
+  box-sizing content-box
+  height 44px
+  background $theme-blue-color
+
 main
   position fixed
   top 0
@@ -14,7 +49,7 @@ main
     width 100%
     margin-bottom 1.5rem
 
-  .section
+  section
     background $theme-white-color
     margin-bottom 1.5rem
 
@@ -27,14 +62,11 @@ main
     justify-content space-between
     img
       width 3.4rem
-      height @width
       margin-right 1.5rem
     .news
       font-size $font-normal-size
       line-height 1.9rem
       color $font-main-color
-    svg
-      width .9rem
 
 //.main-entry
 //  display flex
@@ -127,98 +159,123 @@ main
 //
 //.loan-panel
 //  margin-bottom $default-gap
-//.panel-header
-//  display flex
-//  height 4rem
-//  align-items center
-//  padding 0 1.5rem
-//  border $default-border
-//  background-color $theme-white-color
-//  .modify
-//    display inline-block
-//    width .3rem
-//    height 1.6rem
-//    border-radius @height
-//    background-color $theme-blue-color
-//    margin-right .8rem
-//  .panel-title
-//    flex auto
-//    line-height 1
-//    font-size $font-big-size
-//    color $font-main-color
-//  .more-btn
-//    flex none
-//    color $font-weak-color
-//    font-size $font-small-size
-//
-//.icon-right-arrow
-//  width 1.2rem
-//  height @width
-//  fill $font-weak-color
-//  vertical-align middle
-//
-//.loan-item
-//.insurance-item
-//  background-color $theme-white-color
-//  padding-left 1.5rem
-//  &:active
-//    bg-darken()
-//  &:last-child
-//    .loan-figure
-//      border-bottom none
-//
-//
-//.loan-figure
-//  display flex
-//  flex-grow 1
-//  align-items center
-//  padding 1.5rem 1.5rem 1.5rem 0
-//  border-bottom $default-border
-//  .loan-img
-//    width 5rem
-//    height @width
-//    border-radius .4rem
-//    border $default-border
-//    bg-img()
-//    margin-right 1.6rem
-//    flex none
-//  .title
-//    font-size $font-big-size
-//    color $font-main-color
-//    margin-bottom .9rem
-//    line-height 1
-//  .loan-info
-//    flex auto
-//
-//.detail-box
-//  display flex
-//  flex auto
-//  line-height 1
-//  font-size $font-small-size
-//  color $font-sub-color
-//  &:last-child
-//    align-items flex-end
-//  .detail
-//    margin-bottom .6rem
-//    flex auto
-//  em
-//    color $theme-blue-color
-//  .label
-//    padding 0 .6rem
-//    line-height 2rem
-//    border-radius .2rem
-//  .car
-//    color #f87104
-//    border 1px solid currentColor
-//  .pretty
-//    color $theme-blue-color
-//    border 1px solid currentColor
-//  .large
-//    color $theme-red-color
-//    border 1px solid currentColor
-//  .sum
-//    flex auto
-//    text-align right
+.panel-header
+  display flex
+  height 4rem
+  align-items center
+  padding 0 1.5rem
+  border $default-border
+  background-color $theme-white-color
+  img
+    width 1.9rem
+    height 1.7rem
+    margin-right .6rem
+  .movie-img
+    width 2rem
+  .panel-title
+    flex auto
+    line-height 1
+    font-size $font-big-size
+    color $font-main-color
+  .more-btn
+    flex none
+    color $theme-gray-color
+    font-size $font-smaller-size
+
+.icon-right-arrow
+  width 1.2rem
+  height @width
+  fill $theme-gray-color
+  vertical-align middle
+
+.hotel-item
+.movie-item
+  background-color $theme-white-color
+  padding-left 1.5rem
+  &:active
+    bg-darken()
+  &:last-child
+    .hotel-figure
+      border-bottom none
+
+
+.hotel-figure
+.movie-figure
+  display flex
+  flex-grow 1
+  align-items center
+  padding 1.5rem 1.5rem 1.5rem 0
+  border-bottom $default-border
+  .hotel-img
+  .movie-img
+    width 7rem
+    height 9rem
+    background-size 100% !important
+    bg-img()
+    margin-right 1rem
+    flex none
+  .title
+    font-size $font-normal-size
+    color $font-main-color
+    margin-bottom .8rem
+    line-height 1
+  .hotel-info
+  .movie-info
+    flex auto
+    height 9rem
+.star
+  margin-bottom 2.1rem
+  height 1.3rem
+  line-height 1
+  svg
+    width 1.4rem
+    height 1.3rem
+    fill #ffc62c
+  span
+    color #ffc62c
+    font-size $font-smaller-size
+.detail-box
+  display flex
+  flex auto
+  line-height 1
+  font-size $font-small-size
+  color $font-sub-color
+  justify-content space-between
+  .detail
+    height 1.1rem
+    margin-bottom 1rem
+  .book-num
+    font-size 1.1rem
+    color $theme-blue-color
+    svg
+      fill $theme-blue-color
+      width 1.1rem
+      height .9rem
+      margin-right .35rem
+  .cost
+    font-size 1.8rem
+    color $theme-red-color
+.movie-class
+  font-size $font-smaller-size
+  color $theme-blue-color
+  display flex
+  .time
+    margin-right $font-smaller-size
+    svg
+      fill $theme-blue-color
+  span
+    margin-right 1rem
+    color $theme-blue-color
+    border 1px solid #1ba4dd
+    border-radius .7rem
+    font-size 1rem
+    padding 0 .55rem
+    width 3rem
+    height 1.3rem
+    line-height 1.3rem
+    text-align center
+
+//.movie-figure
 //
 //
 //.insurance-figure

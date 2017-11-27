@@ -39,26 +39,14 @@ export class IndexComponent implements OnInit {
     this.navigateService.pushToRoute(url);
   }
 
-  getLoanList() {
-   this.homeStoreService.getLoanList().subscribe(data => {
-      this.loanList = data;
-    });
-  }
-
-  getInsuranceList() {
-   this.homeStoreService.getInsuranceList().subscribe(data => {
-      this.insuranceList = data;
-    });
-  }
-
-  openLinks(url) {
-    if (this.userStoreService.getUser()) {
-      this.themableBrowserService.openOutLinksInApp(url);
-    } else {
-      this.navigateService.push();
-      this.navigateService.pushToRoute('/login');
-    }
-  }
+  // openLinks(url) {
+  //   if (this.userStoreService.getUser()) {
+  //     this.themableBrowserService.openOutLinksInApp(url);
+  //   } else {
+  //     this.navigateService.push();
+  //     this.navigateService.pushToRoute('/login');
+  //   }
+  // }
 
   refresh() {
    Observable.forkJoin(this.homeStoreService.refreshLoanList(), this.homeStoreService.refreshInsuranceList())

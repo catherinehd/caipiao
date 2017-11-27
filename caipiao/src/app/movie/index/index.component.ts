@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigateService } from '../../service/navigate.service';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navigateService: NavigateService) { }
 
   ngOnInit() {
   }
+
+  goPage(url) {
+    this.navigateService.push();
+    this.navigateService.pushToRoute(url);
+  }
+
 
 }

@@ -1,7 +1,99 @@
 <app-nav [title]="'酒店'" [showConfig]="{}"></app-nav>
 
-<main class="home-sec scroll-container" [appDevicePadding]="44" >
+<div class="header-padding" appDevicePadding></div>
+<main class="hotel-sec">
+  <div class="top-hotel" style="background:url('/assets/image/top-hotel.png') 100% 100% no-repeat">
+    <div class="detail">
+      <p class="hotel-title">Zhotel智尚酒店(杭州西湖西溪店)</p>
+      <div class="star">
+        <svg class="icon-right-arrow">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+        </svg>
+        <svg class="icon-right-arrow">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+        </svg>
+        <svg class="icon-right-arrow">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+        </svg>
+        <span>3.5分</span>
+      </div>
+    </div>
+  </div>
 
+  <section class="hotel-container">
+    <ul class="hotel-list">
+      <!--<li class="hotel-item" *ngFor="let hotel of hotelList" appFastClick (onFastClick)="goPage('./hotel-detail/'+hotel.id)">-->
+      <li class="hotel-item" appFastClick (onFastClick)="goPage('./hotel-detail/1')">
+        <figure class="hotel-figure">
+          <!--<div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ hotel.imgSrc +')'}"></div>-->
+          <div class="hotel-img" style="background:url('/assets/image/hotel-1.png') 100% 100%"></div>
+          <figcaption class="hotel-info">
+            <h4 class="title">Zhotel智尚酒店(杭州西湖西溪店)</h4>
+            <div class="detail-box">
+              <p class="detail">地址： 杭州西湖区西溪花园589号</p>
+            </div>
+            <div class="star">
+              <svg class="icon-right-arrow">
+                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <svg class="icon-right-arrow">
+                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <svg class="icon-right-arrow">
+                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <span>3.5分</span>
+            </div>
+            <div class="detail-box">
+              <div class="book-num">
+                <svg class="icon-right-arrow">
+                  <use xlink:href="assets/icon/symbol-defs.svg#icon-peoplenum"></use>
+                </svg>
+                299人预定过
+              </div>
+              <div class="cost">￥398起</div>
+            </div>
+          </figcaption>
+        </figure>
+      </li>
+      <li class="hotel-item" appFastClick (onFastClick)="goPage('./hotel-detail/1')">
+        <figure class="hotel-figure">
+          <!--<div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ hotel.imgSrc +')'}"></div>-->
+          <div class="hotel-img" style="background:url('/assets/image/hotel-2.png') 100% 100%"></div>
+          <figcaption class="hotel-info">
+            <h4 class="title">Zhotel智尚酒店</h4>
+            <div class="detail-box">
+              <p class="detail">地址： 杭州西湖区西溪花园589号</p>
+            </div>
+            <div class="star">
+              <svg class="icon-right-arrow">
+                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <svg class="icon-right-arrow">
+                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <svg class="icon-right-arrow">
+                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <svg class="icon-right-arrow">
+                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <span>4.5分</span>
+            </div>
+            <div class="detail-box">
+              <div class="book-num">
+                <svg class="icon-right-arrow">
+                  <use xlink:href="assets/icon/symbol-defs.svg#icon-peoplenum"></use>
+                </svg>
+                66人预定过
+              </div>
+              <div class="cost">￥1398起</div>
+            </div>
+          </figcaption>
+        </figure>
+      </li>
+    </ul>
+  </section>
 </main>
 
 <app-tab></app-tab>

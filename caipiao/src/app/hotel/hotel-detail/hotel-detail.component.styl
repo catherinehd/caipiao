@@ -1,0 +1,135 @@
+@import "../../../assets/css/variable.styl"
+
+main
+  padding-bottom 4.8rem
+  .top-hotel
+    background-size 100% !important
+    height 17rem
+    width 100%
+    position relative
+    margin-bottom 1.5rem
+  &>.detail
+    background $theme-white-color
+    margin-bottom 1.5rem
+    display flex
+    justify-content space-around
+    .left
+      .title
+        font-size $font-normal-size
+        color $font-main-color
+      .addr
+        font-size $font-small-size
+        color $font-sub-color
+    .right
+      svg
+        fill $theme-blue-color
+        width 2.9rem
+        height 2.9rem
+
+section
+  margin-bottom 1.5rem
+  background $theme-white-color
+  padding 1.5rem 0 1rem
+  &>div
+    padding 1rem 1.5rem 0
+  .title
+    border-bottom 1px solid rgba(215,215,215,0.3)
+    font-size $font-bigger-size
+    color $font-main-color
+    line-height 1
+    padding-left 1.5rem
+    padding-bottom 1rem
+
+.hotel-detail
+  .detail-list
+    font-size $font-normal-size
+    color $font-main-color
+    &>div
+      margin-bottom 1.5rem
+      display flex
+      span
+        width 50%
+        line-height 1
+  .tip
+    margin-top 1rem
+    line-height 1
+    font-size  $font-small-size
+    color $theme-gray-color
+
+.offer
+  .offer-list
+    display flex
+    justify-content space-around
+    &>div
+      text-align center
+      color $font-sub-color
+      svg
+        height 1.6rem
+        width 2rem
+        fill $theme-blue-color
+        margin-top .6rem
+      div
+        line-height 1
+        font-size $font-smaller-size
+
+.dianping
+  .title
+    .num
+      float right
+      color #ffc62c
+      font-size $font-normal-size
+  .dianping-list
+    padding 0
+    ul
+      li
+        padding 1.5rem
+        display flex
+        justify-content space-between
+        border 1px solid rgba(215,215,215,0.3)
+        .tx
+          height 3.3rem
+          margin-right 1rem
+        .detail
+          .name
+            font-size $font-normal-size
+            color $font-main-color
+            line-height 1
+            margin-bottom .8rem
+          .dianping-num
+            margin-bottom .9rem
+            .star
+              display inline-block
+              margin-left .8rem
+              height 1.3rem
+              line-height 1
+              svg
+                width 1.4rem
+                height 1.3rem
+                fill #ffc62c
+              span
+                color #ffc62c
+                font-size $font-smaller-size
+          .say
+            color $font-sub-color
+            font-size 1.3rem
+            line-height 2.1rem
+
+
+
+.footer-btn
+  position fixed
+  bottom 0
+  left 0
+  width 100%
+  display flex
+  justify-content space-between
+  button
+    width 50%
+    color $theme-white-color
+    background $theme-blue-color
+    font-size $font-normal-size
+    padding 1.7rem 0
+    border-radius 0
+  .active
+    background $theme-little-blue-color
+

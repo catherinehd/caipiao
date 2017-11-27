@@ -1,0 +1,107 @@
+@import "../../../assets/css/variable.styl"
+
+main
+  .top-hotel
+    background-size 100% !important
+    height 17rem
+    width 100%
+    position relative
+    margin-bottom 1.5rem
+    .detail
+      position absolute
+      bottom 0rem
+      left 0rem
+      background rgba(52,52,52,0.6)
+      width 100%
+      height 4.8rem
+      padding-left 1.5rem
+      padding-top .9rem
+      .hotel-title
+        color $theme-white-color
+        font-size $font-normal-size
+        margin-bottom .4rem
+        line-height 1
+      .star
+        height 1.3rem
+        line-height 1
+        svg
+          width 1.4rem
+          height 1.3rem
+          fill #ffc62c
+        span
+          color #ffc62c
+          margin-left 1rem
+          font-size $font-smaller-size
+
+.icon-right-arrow
+  width 1.2rem
+  height @width
+  fill $theme-gray-color
+  vertical-align middle
+
+.hotel-item
+.movie-item
+  background-color $theme-white-color
+  padding-left 1.5rem
+  border-bottom $default-border
+  &:active
+    bg-darken()
+  &:last-child
+    .hotel-figure
+      border-bottom none
+
+
+.hotel-figure
+  display flex
+  flex-grow 1
+  align-items center
+  padding 1.5rem 1.5rem 1.5rem 0
+  .hotel-img
+    width 7rem
+    height 9rem
+    background-size 100% !important
+    bg-img()
+    margin-right 1rem
+    flex none
+  .title
+    font-size $font-normal-size
+    color $font-main-color
+    margin-bottom .8rem
+    line-height 1
+  .hotel-info
+  .movie-info
+    flex auto
+    height 9rem
+.star
+  margin-bottom 2.1rem
+  height 1.3rem
+  line-height 1
+  svg
+    width 1.4rem
+    height 1.3rem
+    fill #ffc62c
+  span
+    color #ffc62c
+    font-size $font-smaller-size
+.detail-box
+  display flex
+  flex auto
+  line-height 1
+  font-size $font-small-size
+  color $font-sub-color
+  justify-content space-between
+  .detail
+    height 1.1rem
+    margin-bottom 1rem
+  .book-num
+    font-size 1.1rem
+    color $theme-blue-color
+    svg
+      fill $theme-blue-color
+      width 1.1rem
+      height .9rem
+      margin-right .35rem
+  .cost
+    font-size 1.8rem
+    color $theme-red-color
+
