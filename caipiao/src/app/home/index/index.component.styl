@@ -27,7 +27,8 @@
     top 15px
     width 13px
     height @width
-    fill $theme-blue-color
+    stroke  $theme-blue-color
+    fill none
     cursor pointer
 
 .nav-bg
@@ -67,6 +68,17 @@ main
       font-size $font-normal-size
       line-height 1.9rem
       color $font-main-color
+      display -webkit-box
+      -webkit-box-orient vertical
+      -webkit-line-clamp 2
+      overflow hidden
+      text-overflow ellipsis
+      width 70%
+      flex-grow 1
+    svg
+      width 9.3%
+      height 16px
+      margin-top 9px
 
 //.main-entry
 //  display flex
@@ -185,7 +197,8 @@ main
 .icon-right-arrow
   width 1.2rem
   height @width
-  fill $theme-gray-color
+  fill none
+  stroke  $theme-gray-color
   vertical-align middle
 
 .hotel-item

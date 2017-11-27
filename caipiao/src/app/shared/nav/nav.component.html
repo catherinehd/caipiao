@@ -1,5 +1,6 @@
 <header class="nav" appDevicePadding>
   <button class="left-btn" *ngIf="showConfig.isCloseShow" appFastClick (onFastClick)="goBack()">关闭</button>
+  <button class="left-btn" *ngIf="showConfig.isCancelShow" appFastClick (onFastClick)="goBack()">取消</button>
   <button class="left-btn" *ngIf="showConfig.isArrowShow" appFastClick (onFastClick)="goBack()">
     <svg class="icon-left-arrow">
       <use xlink:href="assets/icon/symbol-defs.svg#icon-left-arrow"></use>

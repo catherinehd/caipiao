@@ -1,0 +1,63 @@
+<app-nav [title]="'待点评'" [showConfig]="{isArrowShow: true}"></app-nav>
+
+<div class="header-padding" appDevicePadding></div>
+<main class="dianping-list-sec">
+  <section class="dianping-box">
+    <ul>
+      <li class="dianping-item" appFastClick (onFastClick)="goPage('./input-dianping/1')">
+        <div class="left">
+          <img src="assets/image/news-1.png" />
+        </div>
+        <div class="right">
+          <div class="title">
+            天才抢手
+          </div>
+          <div class="class">
+            类型：
+            <span>动作</span>
+            <span>科幻</span>
+            <span>犯罪</span>
+          </div>
+          <div class="time">
+            <svg class="icon-right-arrow">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-clock"></use>
+            </svg>
+            2017-11-10 签到过
+            <button>评一下</button>
+          </div>
+        </div>
+      </li>
+      <li class="dianping-item" appFastClick (onFastClick)="goPage('./input-dianping/1')">
+        <div class="left">
+          <img src="assets/image/hotel-1.png" />
+        </div>
+        <div class="right">
+          <div class="title">
+            Zhotel智尚酒店
+          </div>
+          <div class="class">
+            地址：杭州西湖区西溪花园589号
+          </div>
+          <div class="time">
+            <svg class="icon-right-arrow">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-clock"></use>
+            </svg>
+            2017-11-10 猜你看过
+            <button>评一下</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <div class="no-content">
+    <svg class="close-bth">
+      <use xlink:href="assets/icon/symbol-defs.svg#icon-none"></use>
+    </svg>
+    <div class="msg">
+      您还没有留下足迹哦~请先前往浏览吧~
+    </div>
+  </div>
+
+</main>
+

@@ -1,6 +1,5 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigateService } from '../../service/navigate.service';
-import { DelayLeaveAnimation } from '../../shared/animations/delay-leave.animation';
 
 @Component({
   selector: 'app-index',
@@ -9,7 +8,7 @@ import { DelayLeaveAnimation } from '../../shared/animations/delay-leave.animati
 })
 export class IndexComponent implements OnInit {
 
-  constructor(private navigateService: NavigateService) { }
+  constructor(private navigateService: NavigateService,) { }
 
   ngOnInit() {
   }

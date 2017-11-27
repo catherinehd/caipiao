@@ -1,0 +1,57 @@
+@import "../../../assets/css/variable.styl"
+
+.dianping-item
+  padding 1.5rem
+  display flex
+  justify-content space-between
+  .left
+    margin-right 1.1rem
+    img
+      width 9rem
+      height 6rem
+  .right
+    flex-grow 1
+    .title
+      margin-top -.3rem
+      font-size $font-normal-size
+      margin-bottom .5rem
+    .class
+      font-size $font-small-size
+      color $font-sub-color
+      margin-bottom .5rem
+      span
+        color $theme-blue-color
+        font-size 1rem
+        line-height 1
+        padding .2rem .6rem
+        margin-right 1rem
+        display inline-block
+        border-radius .7rem
+        border 1px solid $theme-blue-color
+    .time
+      font-size $font-smaller-size
+      color $theme-blue-color
+      line-height 2.1rem
+      svg
+        width 1.1rem
+        height @width
+        fill $theme-blue-color
+      button
+        line-height 1
+        float right
+        color $theme-blue-color
+        padding .4rem .6rem
+        border 1px solid $theme-blue-color
+        border-radius .9rem
+
+.no-content
+  margin-top 50%
+  text-align center
+  svg
+    fill $theme-gray-color
+    width 9.7rem
+    height 10.4rem
+  .msg
+    color $theme-gray-color
+    font-size 1.3rem
+    margin-top 1rem

@@ -1,0 +1,42 @@
+<app-nav [title]="'Zhotel智尚酒店'" [showConfig]="{isCancelShow: true}"></app-nav>
+
+<div class="header-padding" appDevicePadding></div>
+<main class="input-dianping-sec">
+  <div class="intotal">
+    总体：
+    <div class="star">
+      <svg class="icon-right-arrow">
+        <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+      </svg>
+      <svg class="icon-right-arrow">
+        <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+      </svg>
+      <svg class="icon-right-arrow">
+        <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+      </svg>
+      <svg class="icon-right-arrow">
+        <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+      </svg>
+      <span>4.5分</span>
+    </div>
+  </div>
+
+  <div class="input-box">
+    <textarea placeholder="分享酒店交通，设施，服务，餐饮等方面体验。多写点评价对大家都有好处～" type="text" ></textarea>
+  </div>
+
+  <div class="btn-box">
+    <button class="submit-btn">提交</button>
+  </div>
+</main>
+
+<app-modal [modal]="modal" (onConfirm)="confirm($event)"></app-modal>
+
+<div class="success">
+  <svg class="icon-right-arrow">
+    <use xlink:href="assets/icon/symbol-defs.svg#icon-success"></use>
+  </svg>
+  点评成功
+</div>
+
+

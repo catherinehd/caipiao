@@ -12,26 +12,30 @@
   z-index 3
 
 .modal-container
-  width 28rem
+  width 24.8rem
   color $font-main-color
   background-color #fff;
-  border-radius .5rem
+  border-radius 1.25rem
   overflow hidden
 
 .modal-content
   padding 4.2rem 1rem
   text-align center
-  font-size $font-bigger-size
+  font-size $font-normal-size
+  color $font-main-color
 
 .btn-group
   display flex
+  background #f7fafb
   button
+    color $font-sub-color
     flex auto
-    font-size $font-big-size
+    font-size $font-bigger-size
     height 4.5rem
-    border-top $default-border
+    border-radius 0
+    border-top 1px solid #d7d7d7
     &:last-child
-      border-left $default-border
+      border-left 1px solid #d7d7d7
       color $theme-red-color
     &:active
       background-color darken($theme-white-color, 10%);

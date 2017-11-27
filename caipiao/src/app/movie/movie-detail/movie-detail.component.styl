@@ -16,8 +16,12 @@ main
       flex-grow 1
       text-align left
       padding-left 1rem
+      .title
+        font-size $font-normal-size
+        margin-bottom 1rem
+        line-height 1rem
       .star
-        margin-bottom 2.1rem
+        margin-bottom 1.5rem
         height 1.3rem
         line-height 1
         svg
@@ -27,6 +31,31 @@ main
         span
           color #ffc62c
           font-size $font-smaller-size
+      .class
+        margin-bottom 1.9rem
+        color $font-sub-color
+        span
+          border 1px solid #1ba4dd
+          color $theme-blue-color
+          font-size 1rem
+          line-height 1rem
+          height 1rem
+          display inline-block
+          border-radius .7rem
+          padding .2rem .5rem
+      .howlong
+      .onshow
+        color $theme-blue-color
+        font-size 1.1rem
+        span
+          float right
+          border 1px solid $theme-blue-color
+          border-radius .9rem
+          display inline-block
+          line-height 1
+          padding .3rem .7rem
+      .howlong
+         margin-bottom .5rem
 
 section
   margin-bottom 1.5rem
@@ -51,8 +80,10 @@ section
   .title
     .num
       float right
-      color #ffc62c
-      font-size $font-normal-size
+      svg
+        width 1.4rem
+        height @width
+        fill $theme-blue-color
   .dianping-list
     padding 0
     ul
@@ -88,3 +119,8 @@ section
             color $font-sub-color
             font-size 1.3rem
             line-height 2.1rem
+          .date
+            svg
+              width 1.1rem
+              height @width
+              fill $theme-blue-color

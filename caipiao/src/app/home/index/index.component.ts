@@ -48,11 +48,16 @@ export class IndexComponent implements OnInit {
   //   }
   // }
 
+  navSearch() {
+    this.navigateService.push();
+    this.navigateService.pushToRoute('./search');
+  }
+
   refresh() {
    Observable.forkJoin(this.homeStoreService.refreshLoanList(), this.homeStoreService.refreshInsuranceList())
       .subscribe(res => {
-        this.loanList = res[0];
-        this.insuranceList = res[1];
+        // this.loanList = res[0];
+        // this.insuranceList = res[1];
         this.isRefreshed = true;
         setTimeout(() => this.isRefreshed = false, 0);
       })

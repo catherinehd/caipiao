@@ -1,0 +1,94 @@
+@import "../../../assets/css/variable.styl"
+
+.nav
+  position fixed
+  display flex
+  flex-grow 1
+  top 0
+  left 0
+  width 100%
+  color $theme-white-color
+  height 44px
+  letter-spacing 2px
+  background $theme-blue-color
+  z-index 2
+  padding 0 1.5rem
+  .input-box
+    flex-grow 1
+    position relative
+  input
+    width 100%
+    margin 0.5rem auto
+    height 3.4rem
+    border-radius 17px
+    padding-left 39px
+    color $font-main-color
+    font-size $font-normal-size
+    &::placeholder
+      color $theme-blue-color
+  .search-bth
+    position absolute
+    left 2rem
+    top 15px
+    width 1.4rem
+    height @width
+    stroke  $theme-blue-color
+    fill none
+    cursor pointer
+  .close-bth
+    position absolute
+    right 1rem
+    top 15px
+    width 1.4rem
+    height @width
+    fill $theme-gray-color
+    cursor pointer
+  button
+    font-size $font-normal-size
+    color $theme-white-color
+    margin-left 1rem
+
+.nav-bg
+  box-sizing content-box
+  height 44px
+  background $theme-blue-color
+
+
+.search-sec
+  .history
+    .his-title
+      padding 1rem 1.5rem
+      border-bottom $default-border
+      display flex
+      justify-content space-between
+      font-size $font-normal-size
+      line-height 1
+      color $font-main-color
+      .del-bth
+        width 1.4rem
+        height @width
+        fill #bdbdbd
+    .his-list
+      margin-top 1.5rem
+      padding 0 1.5rem
+      span
+        color $theme-blue-color
+        font-size $font-small-size
+        border 1px solid $theme-blue-color
+        border-radius 1rem
+        line-height 1
+        padding .4rem .9rem
+        display inline-block
+        margin-right 1rem
+  .no-content
+    margin-top 50%
+    text-align center
+    svg
+      fill $theme-gray-color
+      width 12.2rem
+      height 9.7rem
+    .msg
+      color $theme-gray-color
+      font-size 1.3rem
+      margin-top 1rem
+

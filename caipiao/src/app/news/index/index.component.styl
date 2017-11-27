@@ -1,0 +1,29 @@
+@import "../../../assets/css/variable.styl"
+
+.news-list
+  li
+    padding 1.5rem
+    border-bottom $default-border
+    &>div
+      display flex
+      justify-content space-between
+      .left
+        margin-right 2.1rem
+        .title
+          color $font-main-color
+          font-size $font-normal-size
+          margin-bottom .9rem
+          margin-top -.3rem
+          height 4rem
+        .from-date
+          color $theme-gray-color
+          font-size $font-small-size
+          margin-bottom -.3rem
+          .from
+            margin-right 1rem
+      .right
+        img
+          width 9rem
+          height 6rem
+
+

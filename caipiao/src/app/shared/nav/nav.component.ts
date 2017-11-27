@@ -42,5 +42,6 @@ class ShowConfig {
               public isArrowShow ?: boolean,
               public isRegisterShow ?: boolean,
               public isQuesShow?: boolean,
+              public isCancelShow?: boolean,
               public isSaveShow?: boolean) {}
 }
