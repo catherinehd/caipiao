@@ -2,7 +2,7 @@
 
 <section class="setting-sec">
   <span>昵称：</span>
-  <input type="text" [placeholder]="name" [formControl]="nickName" autofocus>
+  <input type="text" [placeholder]="mobile" [formControl]="nickName" autofocus>
   <svg class="icon-close" appFastClick (onFastClick)="clear()" *ngIf="nickName.value">
     <use xlink:href="assets/icon/symbol-defs.svg#icon-del2"></use>
   </svg>

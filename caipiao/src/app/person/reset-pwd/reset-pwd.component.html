@@ -1,8 +1,8 @@
-<app-nav [title]="'修改密码'" [showConfig]="{isArrowShow: true}"></app-nav>
+<app-nav [title]="title" [showConfig]="{isArrowShow: true}"></app-nav>
 
 <section class="form-sec">
   <div class="form" [formGroup]="pwdSettingForm">
-    <div class="form-field">
+    <div class="form-field" *ngIf="title === '修改密码'">
       <span class="item-title">旧密码：</span>
       <input type="password" placeholder="请输入旧密码" formControlName="oldpwd" maxlength="15">
       <!--<div class="btn-group">-->
@@ -24,7 +24,8 @@
       <!--</div>-->
     </div>
     <div class="form-field">
-      <span class="item-title">新密码：</span>
+      <span class="item-title" *ngIf="title === '修改密码'">新密码：</span>
+      <span class="item-title" *ngIf="title === '重置密码'">密码：</span>
       <input type="password" placeholder="请输入新密码（6-15位组成）" formControlName="pwd" maxlength="15">
       <!--<div class="btn-group">-->
         <!--<button *ngIf="pwdSettingForm.value.pwd" class="close-btn" appFastClick (onFastClick)="clear('pwd')">-->
@@ -72,9 +73,10 @@
     </svg>
     {{msg}}</div>
   <div class="btn-box">
-    <button [disabled]="!pwdSettingForm.value.oldpwd || !pwdSettingForm.value.pwd || !pwdSettingForm.value.pwdAgain" class="form-btn" type="button" appFastClick (onFastClick)="onSubmit()">修改密码</button>
+    <button *ngIf="title === '修改密码'" [disabled]="!pwdSettingForm.value.oldpwd || !pwdSettingForm.value.pwd || !pwdSettingForm.value.pwdAgain" class="form-btn" type="button" appFastClick (onFastClick)="onSubmit()">修改密码</button>
+    <button *ngIf="title === '重置密码'" [disabled]="!pwdSettingForm.value.pwd || !pwdSettingForm.value.pwdAgain" class="form-btn" type="button" appFastClick (onFastClick)="onSubmit2()">确定</button>
   </div>
 </section>
 
-<!--<app-fly-msg [msg]="msg"></app-fly-msg>-->
+<app-fly-msg [msg]="msg"></app-fly-msg>
 <app-loading *ngIf="isLoading"></app-loading>

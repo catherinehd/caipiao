@@ -1,7 +1,7 @@
 <app-nav [title]="'酒店'" [showConfig]="{}"></app-nav>
 
 <div class="header-padding" appDevicePadding></div>
-<main class="hotel-sec">
+<main class="hotel-sec" [appTouchLoading]="!isCompleted" (canLoad)="canLoad()">
   <!--<div class="top-hotel" style="background:url(topHotelImg) 100% 100% no-repeat">-->
   <div class="top-hotel" [ngStyle]="{'background': 'url('+ topHotelImg +') 100%'}">
     <div class="detail">
@@ -22,7 +22,7 @@
   </div>
 
   <section class="hotel-container">
-    <ul class="hotel-list">
+    <ul class="hotel-list" id="hotel-list">
       <li class="hotel-item" *ngFor="let hotel of hotelList" appFastClick (onFastClick)="goPage('./hotel-detail/'+hotel.id)">
       <!--<li class="hotel-item" appFastClick (onFastClick)="goPage('./hotel-detail/1')">-->
         <figure class="hotel-figure">
@@ -58,6 +58,7 @@
         </figure>
       </li>
     </ul>
+    <app-list-loading *ngIf="!isPageLoading && isLoading"></app-list-loading>
   </section>
 </main>
 

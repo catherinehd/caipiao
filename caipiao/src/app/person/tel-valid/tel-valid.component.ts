@@ -4,6 +4,8 @@ import { FormBuilder, AbstractControl, FormGroup, Validators } from '@angular/fo
 import { NavigateService } from '../../service/navigate.service';
 import { UserService } from '../../service/user.service';
 import { ServiceInfo } from '../../config/config';
+import { UserStoreService } from '../../service/user-store.service';
+import { DeviceService } from '../../service/device.service';
 
 @Component({
   selector: 'app-tel-valid',
@@ -12,7 +14,9 @@ import { ServiceInfo } from '../../config/config';
 })
 export class TelValidComponent implements OnInit {
   title: string;
+  isLoading: boolean;
   msg: string;
+  tip: string;
   isImgValidShow: boolean;
   imgCode: string;
   telValidForm: FormGroup;
@@ -22,6 +26,7 @@ export class TelValidComponent implements OnInit {
   count: number;
   isAgreementShow: boolean;
   tel: string;
+  telNum: string;
   validatorMsg = {
     tel: {
       required: '请填写手机号码',
@@ -39,12 +44,14 @@ export class TelValidComponent implements OnInit {
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private navigateService: NavigateService,
+              private userStoreService: UserStoreService,
+              private deviceService: DeviceService,
               private userService: UserService) {
     this.tel = ServiceInfo.tel;
   }
 
   ngOnInit() {
-    this.title = this.router.url.includes('register') ? '注册' : '手机验证';
+    this.title = this.router.url.includes('register') ? '注册' : '找回密码';
     this.buildForm();
   }
 
@@ -55,7 +62,6 @@ export class TelValidComponent implements OnInit {
         Validators.pattern(/^1(3|4|5|7|8)\d\s\d{4}\s\d{4}$/)
       ]],
       'pwd': [this.telValid.tel, [
-        Validators.required,
         Validators.pattern(/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,15}$/)
       ]],
       'code': [this.telValid.code, [
@@ -84,13 +90,18 @@ export class TelValidComponent implements OnInit {
   getCode() {
     this.testTel();
     if (!this.telControl.valid) return;
-    this.userService.testHasRegister(this.telValid.tel).subscribe(res => {
+    this.userService.getCode(this.telValid.tel).subscribe(res => {
       const response = res.json();
-      if (this.title !== '注册') {
-        response ? this.isImgValidShow = true : this.showTip('该手机号码未注册');
+      if (response) {
+        this.counting();
       } else {
-        response ? this.showTip('该手机号码已注册') : this.isImgValidShow = true;
+        this.showTip('请填写有效的手机号码');
       }
+      // if (this.title !== '注册') {
+      //   response ? this.isImgValidShow = true : this.showTip('该手机号码未注册');
+      // } else {
+      //   response ? this.showTip('该手机号码已注册') : this.isImgValidShow = true;
+      // }
     });
   }
 
@@ -127,25 +138,49 @@ export class TelValidComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.telValidForm.value.tel || !this.telValidForm.value.code || !this.imgCode) return;
+    if (!this.telValidForm.value.tel || !this.telValidForm.value.code || !this.telValidForm.value.pwd) return;
     this.testValid();
     if (!this.telValidForm.valid) return;
-    this.userService.testMsgCode(this.telValid.tel, this.telValidForm.value.code).subscribe(res => {
-      res.json() ? this.goNextStep() : this.showTip('验证码错误');
-    })
+    this.telNum = this.telValidForm.value.tel.substring(0 , 3) + this.telValidForm.value.tel.substring(4 , 8) + this.telValidForm.value.tel.substring(9 , 13);
+    this.userService.register(this.telNum, this.telValidForm.value.pwd, this.telValidForm.value.code).subscribe(res => {
+      res.json() ? this.goNextStep() : this.showTip('手机号或验证码错误');
+    });
   }
 
   goNextStep() {
-    this.navigateService.push();
-    // const url = this.title === '注册' ? '/register/setting-pwd' : '/reset/setting-pwd';
-    const url = this.title === '注册' ? '/' : '/reset/setting-pwd';
-    this.navigateService.pushToRoute(url, {tel: this.telValid.tel, msgCode: this.telValidForm.value.code});
+    // this.navigateService.push();
+    // // const url = this.title === '注册' ? '/register/setting-pwd' : '/reset/setting-pwd';
+    // const url = this.title === '注册' ? '/login' : '/reset/setting-pwd';
+    // // this.navigateService.pushToRoute(url, {tel: this.telValid.tel, msgCode: this.telValidForm.value.code});
+    // this.navigateService.pushToRoute(url);
+    this.showTip1('注册成功', () => {
+      // this.userStoreService.storeUser(response);
+      this.navigateService.clearRouteList();
+      this.navigateService.pushToRoute('/login');
+    });
+  }
+
+  onSubmit2() {
+    if (!this.telValidForm.value.tel || !this.telValidForm.value.code ) return;
+    this.testValid();
+    if (!this.telValidForm.valid) return;
+    this.telNum = this.telValidForm.value.tel.substring(0 , 3) + this.telValidForm.value.tel.substring(4 , 8) + this.telValidForm.value.tel.substring(9 , 13);
+    this.navigateService.pushToRoute('./forget-pwd/' + this.telNum + '/' + this.telValidForm.value.code);
   }
 
   showTip(msg) {
     this.msg = msg;
     // setTimeout(() => this.msg = '', 3000);
   }
+
+  showTip1(msg, callback ?: any) {
+    this.tip = msg;
+    setTimeout(() => {
+      this.tip = '';
+      if (callback) callback();
+    }, 3000);
+  }
+
 }
 
 class TelValid {

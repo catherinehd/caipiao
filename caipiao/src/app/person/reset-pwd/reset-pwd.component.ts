@@ -15,6 +15,9 @@ import { SlideToRightAnimation } from '../../shared/animations/slide-to-right.an
   animations: [ SlideToRightAnimation ]
 })
 export class ResetPwdComponent implements OnInit {
+  title: string;
+  mobile: string;
+  tip: string;
   isLoading: boolean;
   tel: string;
   pwdSettingForm: FormGroup;
@@ -53,13 +56,13 @@ export class ResetPwdComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.title = this.router.url.includes('forget') ? '重置密码' : '修改密码';
     this.buildForm();
   }
 
   buildForm() {
     this.pwdSettingForm = this.formBuilder.group({
       'oldpwd': [this.pwdSetting.oldpwd, [
-        Validators.required,
         Validators.pattern(/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,15}$/)
       ]],
       'pwd' : [this.pwdSetting.pwd, [
@@ -96,12 +99,36 @@ export class ResetPwdComponent implements OnInit {
 
 
   onSubmit() {
+    const user = this.userStoreService.getUser();
+    this.mobile = user ? user.mobile : '';
     if (!this.testValid()) return;
     this.isLoading = true;
      // const params = this.activatedRoute.snapshot.params;
     // this.type === 1 ? this.register(params.tel, params.msgCode) : this.resPwd(params.tel, params.msgCode);
-    console.log(this.pwdSettingForm.value.pwd); // 修改密码的接口
+    this.userService.setPwd(this.mobile , this.pwdSettingForm.value.oldpwd, this.pwdSettingForm.value.pwd).subscribe( res => {
+      if(res.json()) {
+        this.showTip1('修改密码成功', () => {
+          // this.userStoreService.storeUser(response);
+          this.navigateService.clearRouteList();
+          this.navigateService.pushToRoute('/login');
+        });
+      }
+    });
+  }
 
+
+  onSubmit2() {
+    if (!this.testValid()) return;
+    this.isLoading = true;
+    this.userService.updatePwd(this.activatedRoute.snapshot.params.mobile , this.pwdSettingForm.value.pwd , this.activatedRoute.snapshot.params.code).subscribe( res => {
+      if(res.json()) {
+        this.showTip1('重置密码成功', () => {
+          // this.userStoreService.storeUser(response);
+          this.navigateService.clearRouteList();
+          this.navigateService.pushToRoute('/login');
+        });
+      }
+    });
   }
 
   showTip(msg, callback ?: any) {
@@ -112,6 +139,15 @@ export class ResetPwdComponent implements OnInit {
     //   if (callback) callback();
     // }, 3000);
   }
+
+  showTip1(msg, callback ?: any) {
+    this.tip = msg;
+    setTimeout(() => {
+      this.tip = '';
+      if (callback) callback();
+    }, 3000);
+  }
+
 
 }
 

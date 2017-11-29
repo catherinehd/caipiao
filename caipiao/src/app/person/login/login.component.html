@@ -4,7 +4,7 @@
   <div class="form" [formGroup]="loginForm">
     <div class="form-field">
       <label class="form-label">手机号</label>
-      <input type="tel" placeholder="请输入手机号" formControlName="tel" [appTelFormat]="telControl" maxlength="13" (change)="testIfRegisted()">
+      <input type="tel" placeholder="请输入手机号" formControlName="tel" [appTelFormat]="telControl" maxlength="13">
       <div class="btn-group" *ngIf="loginForm.value.tel">
         <button class="close-btn" appFastClick (onFastClick)="clear('tel')">
           <svg class="icon-close">
@@ -49,7 +49,7 @@
 
 <!--<p class="footer-tip" appFastClick (onFastClick)="isAgreementShow = true">登录即表示您同意<span class="agreement"> 用户服务协议</span></p>-->
 
-<!--<app-fly-msg [msg]="msg"></app-fly-msg>-->
+<app-fly-msg [msg]="tip"></app-fly-msg>
 <app-loading *ngIf="isLoading"></app-loading>
 <!--<app-agreement *ngIf="isAgreementShow" (onClose)="isAgreementShow = false"></app-agreement>-->
 

@@ -118,6 +118,14 @@
 </main>
 
 <div class="footer-btn">
-  <button class="active">签到</button>
-  <button>写点评</button>
+  <button (click)="qian()">签到</button>
+  <button (click)="write()">写点评</button>
 </div>
+
+<div class="qiandao" *ngIf="qiandao">签到成功!</div>
+<div class="pinglun" *ngIf="ping">
+  <input placeholder="点评">
+  <button (click)="submit()">提交</button>
+</div>
+
+<app-fly-msg [msg]="msg"></app-fly-msg>

@@ -1,7 +1,7 @@
 <app-nav [title]="'电影'" [showConfig]="{}"></app-nav>
 
 <div class="header-padding" appDevicePadding></div>
-<main class="movie-sec scroll-container" >
+<main class="movie-sec scroll-container" [appTouchLoading]="!isCompleted" (canLoad)="canLoad()">
   <div class="top-movie" style="background:url('/assets/image/movie-top.png') 100% 100% no-repeat">
   </div>
 
@@ -58,6 +58,7 @@
         </figure>
       </li>
     </ul>
+    <app-list-loading *ngIf="!isPageLoading && isLoading"></app-list-loading>
   </section>
 </main>
 

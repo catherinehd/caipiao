@@ -15,6 +15,7 @@ import { SlideToRightAnimation } from '../../shared/animations/slide-to-right.an
 })
 export class SettingPersonalInfoComponent implements OnInit {
   name: string;
+  mobile: string;
   msg: string;
   nickName = new FormControl('', [
     Validators.required
@@ -28,6 +29,7 @@ export class SettingPersonalInfoComponent implements OnInit {
   ngOnInit() {
     const user = this.userStoreService.getUser();
     this.name = user ? user.nickName : '';
+    this.mobile = user ? user.mobile : '';
   }
 
   clear() {
@@ -39,10 +41,10 @@ export class SettingPersonalInfoComponent implements OnInit {
       this.showTip('请填写昵称');
       return;
     }
-    this.userService.updateNickName(this.nickName.value).subscribe(res => {
+    this.userService.updateNickName( this.mobile , this.nickName.value).subscribe(res => {
       const response = res.json();
-      if (response) {
-        this.showTip(response);
+      if (!response) {
+        this.showTip(!response);
       }else {
         this.userStoreService.refreshUser(this.nickName.value);
         this.navigateService.popRoute();

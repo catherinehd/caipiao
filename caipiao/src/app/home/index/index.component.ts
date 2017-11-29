@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 import { DelayLeaveAnimation } from '../../shared/animations/delay-leave.animation';
 
+import { FormBuilder, AbstractControl, FormGroup, Validators } from '@angular/forms';
 import { HotelService } from '../../service/hotel.service';
 import { HotelModel} from '../../model/hotel.model';
 import { MovieService} from '../../service/movie.service';
@@ -33,19 +34,24 @@ export class IndexComponent implements OnInit {
   topNews: any;
   title: string;
 
+  searchForm: FormGroup;
+  searchword: string;
+  searchfor: Seachfor = new Seachfor('');
+
   constructor(private navigateService: NavigateService,
               private homeStoreService: HomeStoreService,
               private themableBrowserService: ThemableBrowserService,
               private userStoreService: UserStoreService,
+              private formBuilder: FormBuilder,
               private hotelService: HotelService,
               private newsService: NewsService,
               private movieService: MovieService) { }
 
   ngOnInit() {
-    // this.navigateService.clearRouteList();
+    this.navigateService.clearRouteList();
     // this.getLoanList();
     // this.getInsuranceList();
-  this.newsService.getNewsList('最新').subscribe( res => {
+    this.newsService.getNewsList('最新' , 0).subscribe( res => {
     this.topNews = res.json()[0];
       this.topNews.path = this.topNews.path.replace(/\//g, '\\');
       this.title = res.json()[0].title;
@@ -56,8 +62,15 @@ export class IndexComponent implements OnInit {
    this.movieService.getMovieList('', 1).subscribe( res => {
      this.movieList = (res.json().slice(0 , 5));
    });
+   this.buildForm();
   }
 
+  buildForm() {
+    this.searchForm = this.formBuilder.group( {
+      'searchword': [this.searchfor.searchword, [
+      ]]
+    });
+  }
   goPage(url) {
     this.navigateService.push();
     this.navigateService.pushToRoute(url);
@@ -72,9 +85,10 @@ export class IndexComponent implements OnInit {
   //   }
   // }
 
-  navSearch() {
+  navSearch(msg) {
+    if(!msg) return;
     this.navigateService.push();
-    this.navigateService.pushToRoute('./search');
+    this.navigateService.pushToRoute('./search/' + msg);
   }
 
   refresh() {
@@ -84,6 +98,10 @@ export class IndexComponent implements OnInit {
         // this.insuranceList = res[1];
         this.isRefreshed = true;
         setTimeout(() => this.isRefreshed = false, 0);
-      })
+      });
   }
+}
+
+class Seachfor {
+  constructor(public searchword: string) {}
 }

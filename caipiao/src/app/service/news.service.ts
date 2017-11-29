@@ -7,11 +7,12 @@ export class NewsService {
 
   constructor(private httpService: HttpService) { }
 
-  getNewsList(key) {
+  getNewsList(key , page) {
     return this.httpService.getMethod({
       url: 'LotteryV2/News',
       data: {
         keyword: key,
+        page: page,
       }
     });
   }

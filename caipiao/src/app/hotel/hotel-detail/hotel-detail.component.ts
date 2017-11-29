@@ -3,6 +3,7 @@ import { NavigateService } from '../../service/navigate.service';
 import { HotelService } from '../../service/hotel.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-hotel-detail',
   templateUrl: './hotel-detail.component.html',
@@ -20,6 +21,9 @@ export class HotelDetailComponent implements OnInit {
   leave: string;
   roomnum: number;
   tip: string;
+  qiandao = false;
+  ping = false;
+  msg: string;
 
   constructor(private navigateService: NavigateService,
               private activatedRoute: ActivatedRoute,
@@ -40,6 +44,31 @@ export class HotelDetailComponent implements OnInit {
     this.hotelService.getHotelComment( this.activatedRoute.snapshot.params.id , 1).subscribe( res => {
       this.commentList = res.json();
     });
+  }
+
+  qian() {
+    this.qiandao = true;
+    setTimeout(() => {
+      this.qiandao = false;
+    }, 2000);
+  }
+
+  write() {
+    this.ping = true;
+  }
+
+  submit() {
+    this.hotelService.write('mobile', 'hotel', 'comment').subscribe( res => {
+      console.log(res);
+    });
+  }
+
+  showTip(msg, callback ?: any) {
+    this.tip = msg;
+    setTimeout(() => {
+      this.tip = '';
+      if (callback) callback();
+    }, 3000);
   }
 
 }

@@ -1,5 +1,8 @@
 @import "../../../assets/css/variable.styl"
 
+.main
+  top 0
+  bottom 0
 .nav
   position fixed
   display flex
@@ -22,15 +25,15 @@
     height 3.4rem
     border-radius 17px
     padding-left 39px
-    color $font-main-color
+    color $theme-blue-color
     font-size $font-normal-size
     &::placeholder
       color $theme-blue-color
   .search-bth
     position absolute
-    left 2rem
+    left 15px
     top 15px
-    width 1.4rem
+    width 1.3rem
     height @width
     stroke  $theme-blue-color
     fill none
@@ -70,6 +73,7 @@
         fill #bdbdbd
     .his-list
       margin-top 1.5rem
+      margin-bottom 1.5rem
       padding 0 1.5rem
       span
         color $theme-blue-color
@@ -80,6 +84,7 @@
         padding .4rem .9rem
         display inline-block
         margin-right 1rem
+        margin-bottom .5rem
   .no-content
     margin-top 50%
     text-align center
@@ -92,3 +97,19 @@
       font-size 1.3rem
       margin-top 1rem
 
+
+.hotel-info
+  position relative
+  .detail-box
+    .detail
+      height auto
+      line-height 1.2
+      margin-bottom .5rem
+.last-detail-box
+  position absolute
+  bottom 0
+  width 100%
+  .book-num
+    line-height 1.8rem
+  .cost
+    text-align right

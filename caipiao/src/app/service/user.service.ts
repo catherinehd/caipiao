@@ -17,34 +17,48 @@ export class UserService {
   }
 
   // 注册
-  register(mobile, loginPwd) {
-    return this.httpService.putMethod({
+  register(mobile, loginPwd, code) {
+    return this.httpService.getMethod({
       url: 'LotteryV2/register',
       data: {
         mobile: mobile,
-        password: loginPwd
+        password: loginPwd,
+        code: code
       }
     });
   }
 
   // 修改昵称
-  updateNickName(nickName) {
-    return this.httpService.putMethod({
-      url: 'User/UpdateNickName',
+  updateNickName(mobile , nickName) {
+    return this.httpService.getMethod({
+      url: 'LotteryV2/setNickName',
       data: {
-        nick_name: nickName
+        mobile: mobile,
+        nickname: nickName
       }
     });
   }
 
   // 忘记密码
-  updatePwd(mobile, nickName, loginPwd) {
-    return this.httpService.putMethod({
-      url: 'User/UpdatePwdMobile',
+  updatePwd(mobile, password, code) {
+    return this.httpService.getMethod({
+      url: 'LotteryV2/ResetPassword',
       data: {
         mobile: mobile,
-        nick_name: nickName,
-        login_pwd: loginPwd
+        password: password,
+        code: code
+      }
+    });
+  }
+
+  // 修改密码
+  setPwd(mobile, password, newpassword) {
+    return this.httpService.getMethod({
+      url: 'LotteryV2/setPassword',
+      data: {
+        mobile: mobile,
+        password: password,
+        newpassword: newpassword
       }
     });
   }

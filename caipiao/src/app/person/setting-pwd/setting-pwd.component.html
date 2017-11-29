@@ -64,6 +64,6 @@
 <p class="footer-tip" *ngIf="type === 1" appFastClick (onFastClick)="isAgreementShow = true">注册即表示您同意<span class="agreement"> 用户服务协议</span></p>
 <!--<p class="footer-tip" *ngIf="type === 2">如果出现问题，请联系 <a class="tel" href="tel:{{tel}}">客服电话</a></p>-->
 
-<!--<app-fly-msg [msg]="msg"></app-fly-msg>-->
+<app-fly-msg [msg]="tip"></app-fly-msg>
 <!--<app-agreement *ngIf="isAgreementShow" (onClose)="isAgreementShow = false"></app-agreement>-->
 <app-loading *ngIf="isLoading"></app-loading>

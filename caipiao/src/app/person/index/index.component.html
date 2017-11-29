@@ -3,7 +3,8 @@
 <div class="header-padding" appDevicePadding></div>
 <header class="person-header login-header" appFastClick (onFastClick)="pushToUserInfo()">
   <img class="avatar" src="assets/image/tx.png">
-  <h4 class="name" *ngIf="mobile">{{mobile}}</h4>
+  <h4 class="name" *ngIf="mobile && !nickName">{{mobile}}</h4>
+  <h4 class="name" *ngIf="nickName">{{nickName}}</h4>
   <!--<svg class="icon-right-arrow" *ngIf="nickName">-->
     <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>-->
   <!--</svg>-->

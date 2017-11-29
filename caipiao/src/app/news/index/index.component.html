@@ -1,7 +1,7 @@
 <app-nav [title]="'资讯'" [showConfig]="{}"></app-nav>
 
 <div class="header-padding" appDevicePadding></div>
-<main class="news-sec">
+<main class="news-sec" [appTouchLoading]="!isCompleted" (canLoad)="canLoad()">
 
   <section class="news-box">
     <ul class="news-list">
@@ -26,6 +26,7 @@
         </div>
       </li>
     </ul>
+    <app-list-loading *ngIf="!isPageLoading && isLoading"></app-list-loading>
   </section>
 
 </main>

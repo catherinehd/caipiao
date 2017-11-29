@@ -13,7 +13,7 @@
         </button>
       </div>
     </div>
-    <div class="form-field">
+    <div class="form-field" *ngIf="title === '注册'">
       <label class="form-label">密码：</label>
       <input type="password" placeholder="请输入登录密码" maxlength="15" formControlName="pwd">
       <div class="btn-group" *ngIf="telValidForm.value.tel">
@@ -40,7 +40,8 @@
     {{msg}}
   </div>
   <div class="btn-box">
-    <button class="form-btn" type="button" [disabled]="!telValidForm.value.tel || !telValidForm.value.pwd || !telValidForm.value.code || !imgCode" appFastClick (onFastClick)="onSubmit()">注册</button>
+    <button class="form-btn" *ngIf="title === '注册'" type="button" [disabled]="!telValidForm.value.tel || !telValidForm.value.pwd || !telValidForm.value.code " appFastClick (onFastClick)="onSubmit()">注册</button>
+    <button class="form-btn" *ngIf="title !== '注册'" type="button" [disabled]="!telValidForm.value.tel || !telValidForm.value.code " appFastClick (onFastClick)="onSubmit2()">重置密码</button>
   </div>
 </section>
 
@@ -48,6 +49,6 @@
 <!--<p class="footer-tip" *ngIf="title !== '注册'">如果出现问题，请联系 <a class="tel" href="tel:{{tel}}">客服电话</a></p>-->
 
 
-<app-img-valid *ngIf="isImgValidShow" (onClose)="closeImgValid($event)" [mobile]="telValid.tel" [type]="title === '注册' ? 'Register' : 'ForgetPwd'"></app-img-valid>
-<!--<app-fly-msg [msg]="msg"></app-fly-msg>-->
+<!--<app-img-valid *ngIf="isImgValidShow" (onClose)="closeImgValid($event)" [mobile]="telValid.tel" [type]="title === '注册' ? 'Register' : 'ForgetPwd'"></app-img-valid>-->
+<app-fly-msg [msg]="tip"></app-fly-msg>
 <!--<app-agreement *ngIf="isAgreementShow" (onClose)="isAgreementShow = false"></app-agreement>-->

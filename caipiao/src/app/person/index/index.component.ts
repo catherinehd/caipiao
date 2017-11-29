@@ -22,7 +22,7 @@ export class IndexComponent {
       this.mobile = this.mobile.substring(0, 3 ) + '****' + this.mobile.substring(7) ;
     } else {
       this.mobile = '' ;
-    }
+    };
   }
 
   goPage(page) {
@@ -31,7 +31,9 @@ export class IndexComponent {
   }
 
   pushToUserInfo() {
-    if (!this.nickName) return;
-    this.goPage('/personal-info')
+    if (!this.mobile) {
+      this.goPage('./login');
+    } else {
+      this.goPage('/personal-info'); }
   }
 }

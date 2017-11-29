@@ -30,7 +30,8 @@ const personRoutes: Routes = [
   { path: 'service', component: ServiceComponent },
   { path: 'personal-info', component: PersonalInfoComponent, canActivate: [AuthGuard] },
   { path: 'setting-personal-info', component: SettingPersonalInfoComponent, canActivate: [AuthGuard] },
-  { path: 'reset-pwd', component: ResetPwdComponent, canActivate: [AuthGuard]}
+  { path: 'reset-pwd', component: ResetPwdComponent, canActivate: [AuthGuard]},
+  { path: 'forget-pwd/:mobile/:code', component: ResetPwdComponent }
 ];
 
 @NgModule({

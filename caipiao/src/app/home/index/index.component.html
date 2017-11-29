@@ -1,8 +1,6 @@
-<!--<app-nav [title]="'首页'" [showConfig]="{}"></app-nav>-->
-
-<header class="nav" appDevicePadding>
-  <input type="text" placeholder="找酒店、搜电影" />
-  <svg class="search-bth" appFastClick (onFastClick)="navSearch()">
+<header class="nav form" appDevicePadding [formGroup]="searchForm">
+  <input type="text" placeholder="找酒店、搜电影" formControlName="searchword"/>
+  <svg class="search-bth" appFastClick (onFastClick)="navSearch(searchForm.value.searchword)">
     <use xlink:href="assets/icon/symbol-defs.svg#icon-search"></use>
   </svg>
 </header>

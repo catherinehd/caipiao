@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './index/index.component';
 
 const searchRoutes: Routes = [
-  { path: 'search', component: IndexComponent },
+  { path: 'search/:keyword', component: IndexComponent },
 ];
 
 @NgModule({

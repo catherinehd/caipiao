@@ -14,6 +14,7 @@ import { ServicefalseService } from '../../service/servicefalse.service';
 })
 export class LoginComponent implements OnInit {
   msg: string;
+  tip: string;
   isLoading: boolean;
   isOpenEyesShow = true;
   loginForm: FormGroup;
@@ -101,17 +102,17 @@ export class LoginComponent implements OnInit {
     this.isLoading = true;
     const tel = this.getTelValue();
     this.userService.login(tel, this.loginForm.value.pwd).subscribe(res => {
-      res.json() === null ? this.showTip('手机号码或密码错误') : this.loginSuccess(res.json());
+      res.json() === null ? this.showTip('密码或手机号错误') : this.loginSuccess(res.json());
     });
   }
 
   loginSuccess(user) {
-    this.showTip('登录成功');
+    this.isLoading = false;
+    this.msg = '';
+    this.showTip1('登录成功');
     setTimeout(() => {
       this.userStoreService.storeUser(user);
-      this.serviceFalseService.getFalsePage().subscribe( res => {
-        this.gofalsepage(res);
-      })
+      this.navigateService.pushToRoute('./home');
     }, 2000);
   }
 
@@ -127,6 +128,14 @@ export class LoginComponent implements OnInit {
     this.isLoading = false;
     this.msg = msg;
     // setTimeout(() => this.msg = '', 2000);
+  }
+
+  showTip1(msg, callback ?: any) {
+    this.tip = msg;
+    setTimeout(() => {
+      this.tip = '';
+      if (callback) callback();
+    }, 3000);
   }
 }
 
