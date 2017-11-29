@@ -5,7 +5,7 @@ import { IndexComponent } from './index/index.component';
 import { SharedModule } from '../shared/shared.module';
 import { NewsDetailComponent } from './news-detail/news-detail.component';
 
-
+import { NewsService} from '../service/news.service';
 
 @NgModule({
   imports: [ NewsRoutingModule, SharedModule ],
@@ -13,6 +13,6 @@ import { NewsDetailComponent } from './news-detail/news-detail.component';
     IndexComponent,
     NewsDetailComponent
   ],
-  // providers: [ UserService ]
+   providers: [ NewsService ]
 })
 export class NewsModule { }

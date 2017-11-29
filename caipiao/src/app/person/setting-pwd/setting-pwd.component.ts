@@ -97,7 +97,7 @@ export class SettingPwdComponent implements OnInit {
   }
 
   register(tel, msgCode) {
-    this.userService.register(tel, msgCode, this.pwdSettingForm.value.pwd).subscribe(res => {
+    this.userService.register(tel, this.pwdSettingForm.value.pwd).subscribe(res => {
       const response = res.json();
       if (response.id < 0) {
         this.showTip(response.nick_name);

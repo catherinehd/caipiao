@@ -80,97 +80,6 @@ main
       height 16px
       margin-top 9px
 
-//.main-entry
-//  display flex
-//  margin-bottom $default-gap
-//  .entry-cell
-//    flex auto
-//    background-color $theme-white-color
-//    &:first-child
-//      border-right $default-border
-//    &:active
-//      bg-darken()
-//  .main-info
-//    color $font-main-color
-//    font-size $font-big-size
-//  .sub-info
-//    color $font-sub-color
-//    font-size $font-smaller-size
-//  figure
-//    height 7.5rem
-//    display flex
-//    flex-direction row
-//    justify-content center
-//    align-items center
-//
-//.icon-insurance-box
-//.icon-loan-box
-//  display flex
-//  justify-content center
-//  align-items center
-//  circle(5rem)
-//  margin-right 1.6rem
-//  svg
-//    width 2.8rem
-//    height @width
-//    vertical-align middle
-//
-//.cell-info
-//  line-height 1
-//  .main-info
-//    margin-bottom .8rem
-//.icon-loan-box
-//  background-image linear-gradient(to right bottom, #ff9513, #feb117);
-//
-//.icon-insurance-box
-//  circle(5rem)
-//  background-image linear-gradient(to right bottom, #3578e9, #4f95eb);
-//
-//
-//.sub-entry
-//  display flex
-//  margin-bottom $default-gap
-//  .entry-cell
-//    display inline-flex
-//    align-items center
-//    justify-content center
-//    flex-direction column
-//    flex-grow 1
-//    height 8rem
-//    background-color $theme-white-color
-//    &:active
-//      bg-darken()
-//  .cell-info
-//    color $font-sub-color
-//    font-size $font-small-size
-//    padding-top 1.1rem
-//    line-height 1
-//
-//
-//.icon-calculator
-//  width 2.7rem
-//  height @width
-//
-//.icon-credit
-//  width 3.2rem
-//  height @width
-//
-//.icon-interest
-//  width 3rem
-//  height @width
-//
-//.icon-bank
-//  width 2.7rem
-//  height @width
-//
-//.icon-credit + .cell-info
-//  margin-top -.5rem
-//
-//.icon-interest + .cell-info
-//  margin-top -.3rem
-//
-//.loan-panel
-//  margin-bottom $default-gap
 .panel-header
   display flex
   height 4rem
@@ -255,8 +164,8 @@ main
   color $font-sub-color
   justify-content space-between
   .detail
-    height 1.1rem
-    margin-bottom 1rem
+    line-height 1.2
+    margin-bottom .5rem
   .book-num
     font-size 1.1rem
     color $theme-blue-color
@@ -288,26 +197,13 @@ main
     line-height 1.3rem
     text-align center
 
-//.movie-figure
-//
-//
-//.insurance-figure
-//  @extend .loan-figure
-//  .insurance-img
-//    width 13rem
-//    height 8rem
-//    border-radius .4rem
-//    border $default-border
-//    bg-img()
-//    margin-right 1.4rem
-//
-//.insurance-info
-//  align-self flex-start
-//  font-size $font-small-size
-//  line-height 1
-//  .detail
-//    color $font-sub-color
-//    margin-bottom .8rem
-//  .sub-detail
-//    color $theme-red-color
-//    font-weight normal
+.hotel-info
+  position relative
+.last-detail-box
+  position absolute
+  bottom 0
+  width 100%
+  .book-num
+    line-height 1.8rem
+  .cosr
+    text-align right

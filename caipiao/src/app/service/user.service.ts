@@ -8,22 +8,21 @@ export class UserService {
   // 登录
   login(mobile, loginPwd) {
     return this.httpService.getMethod({
-      url: 'User/Login',
+      url: 'LotteryV2/login',
       data: {
         mobile: mobile,
-        login_pwd: loginPwd
+        password: loginPwd
       }
     });
   }
 
   // 注册
-  register(mobile, msgCode, loginPwd) {
+  register(mobile, loginPwd) {
     return this.httpService.putMethod({
-      url: 'User/Register',
+      url: 'LotteryV2/register',
       data: {
         mobile: mobile,
-        nick_name: msgCode,
-        login_pwd: loginPwd
+        password: loginPwd
       }
     });
   }
@@ -87,6 +86,15 @@ export class UserService {
         type: type
       }
     });
+  }
+  // 获取短信验证码，不需要图片验证
+  getCode(mobile) {
+    return this.httpService.getMethod( {
+      url: 'LotteryV2/sendCode',
+      data: {
+        mobile: mobile
+      }
+    })
   }
 
 }

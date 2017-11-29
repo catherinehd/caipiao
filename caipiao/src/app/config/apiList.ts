@@ -3,7 +3,7 @@ export class ApiList {
   private api: string;
 
   constructor() {
-    this.baseUrl = 'http://jrcs.fancelue.com/jrcsApi/';
+    this.baseUrl = 'http://tease.fancelue.com/';
     this.api = '';
   }
 

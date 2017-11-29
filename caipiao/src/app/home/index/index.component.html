@@ -17,8 +17,8 @@
 
     <section class="top-news">
       <img src="/assets/image/top-news.png" />
-      <div class="news" appFastClick (onFastClick)="goPage('./news-detail/1')">
-        川普来中国参观完这里，就把推特背景换了川普来中国参观完这里换了...
+      <div class="news" appFastClick (onFastClick)="goPage('./news-detail/' +  topNews.path)">
+        {{title}}
       </div>
       <svg class="icon-right-arrow" appFastClick (onFastClick)="goPage('./news')">
         <use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>
@@ -37,15 +37,15 @@
         </button>
       </div>
       <ul class="hotel-list">
-        <!--<li class="hotel-item" *ngFor="let hotel of hotelList" appFastClick (onFastClick)="goPage('./hotel-detail/'+hotel.id)">-->
-        <li class="hotel-item" appFastClick (onFastClick)="goPage('./hotel-detail/1')">
+        <li class="hotel-item" *ngFor="let hotel of hotelList" appFastClick (onFastClick)="goPage('./hotel-detail/'+hotel.id)">
+        <!--<li class="hotel-item" appFastClick (onFastClick)="goPage('./hotel-detail/1')">-->
           <figure class="hotel-figure">
-            <!--<div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ hotel.imgSrc +')'}"></div>-->
-            <div class="hotel-img" style="background:url('/assets/image/hotel-1.png') 100% 100%"></div>
+            <div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ hotel.pic +')'}"></div>
+            <!--<div class="hotel-img" style="background:url('/assets/image/hotel-1.png') 100% 100%"></div>-->
             <figcaption class="hotel-info">
-              <h4 class="title">Zhotel智尚酒店(杭州西湖西溪店)</h4>
+              <h4 class="title">{{hotel.hotel_name}}</h4>
               <div class="detail-box">
-                <p class="detail">地址： 杭州西湖区西溪花园589号</p>
+                <p class="detail">地址： {{hotel.address}}</p>
               </div>
               <div class="star">
                 <svg class="icon-right-arrow">
@@ -57,52 +57,16 @@
                 <svg class="icon-right-arrow">
                   <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
                 </svg>
-                <span>3.5分</span>
+                <span>{{hotel.score}}分</span>
               </div>
-              <div class="detail-box">
+              <div class="detail-box last-detail-box">
                 <div class="book-num">
                   <svg class="icon-right-arrow">
                     <use xlink:href="assets/icon/symbol-defs.svg#icon-peoplenum"></use>
                   </svg>
-                  299人预定过
+                  {{hotel.orders}}人预定过
                 </div>
-                <div class="cost">￥398起</div>
-              </div>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="hotel-item" appFastClick (onFastClick)="goPage('./hotel-detail/1')">
-          <figure class="hotel-figure">
-            <!--<div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ hotel.imgSrc +')'}"></div>-->
-            <div class="hotel-img" style="background:url('/assets/image/hotel-2.png') 100% 100%"></div>
-            <figcaption class="hotel-info">
-              <h4 class="title">Zhotel智尚酒店</h4>
-              <div class="detail-box">
-                <p class="detail">地址： 杭州西湖区西溪花园589号</p>
-              </div>
-              <div class="star">
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <span>4.5分</span>
-              </div>
-              <div class="detail-box">
-                <div class="book-num">
-                  <svg class="icon-right-arrow">
-                    <use xlink:href="assets/icon/symbol-defs.svg#icon-peoplenum"></use>
-                  </svg>
-                  66人预定过
-                </div>
-                <div class="cost">￥1398起</div>
+                <div class="cost">￥{{hotel.price}}起</div>
               </div>
             </figcaption>
           </figure>
@@ -122,15 +86,15 @@
         </button>
       </div>
       <ul class="movie-list">
-        <!--<li class="hotel-item" *ngFor="let hotel of hotelList" appFastClick (onFastClick)="goPage('./hotel-detail/'+hotel.id)">-->
-        <li class="movie-item" appFastClick (onFastClick)="goPage('./movie-detail/1')">
+        <li class="movie-item" *ngFor="let movie of movieList" appFastClick (onFastClick)="goPage('./movie-detail/'+movie.id)">
+        <!--<li class="movie-item" appFastClick (onFastClick)="goPage('./movie-detail/1')">-->
           <figure class="movie-figure">
-            <!--<div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ hotel.imgSrc +')'}"></div>-->
-            <div class="movie-img" style="background:url('/assets/image/movie-1.png') 100% 100%"></div>
+            <div class="movie-img" [ngStyle]="{'backgroundImage': 'url('+ movie.pic +')'}"></div>
+            <!--<div class="movie-img" style="background:url('/assets/image/movie-1.png') 100% 100%"></div>-->
             <figcaption class="hotel-info">
-              <h4 class="title">东方快车谋杀案东方快车谋杀案...</h4>
+              <h4 class="title">{{movie.movie_name}}</h4>
               <div class="detail-box">
-                <p class="detail">导演： 张三</p>
+                <p class="detail">主演： {{movie.targets}}</p>
               </div>
               <div class="star">
                 <svg class="icon-right-arrow">
@@ -142,178 +106,60 @@
                 <svg class="icon-right-arrow">
                   <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
                 </svg>
-                <span>3.5分</span>
+                <span>{{movie.movie_score}}分</span>
               </div>
               <div class="movie-class">
                 <div class="time">
                   <svg class="icon-right-arrow">
                     <use xlink:href="assets/icon/symbol-defs.svg#icon-clock"></use>
                   </svg>
-                  120分钟
+                  {{movie.times}}分钟
                 </div>
-                <span>动作</span>
-                <span>科幻</span>
+                <!--<span>动作</span>-->
+                <!--<span>科幻</span>-->
               </div>
             </figcaption>
           </figure>
         </li>
-        <li class="movie-item" appFastClick (onFastClick)="goPage('./movie-detail/1')">
-          <figure class="movie-figure">
-            <!--<div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ hotel.imgSrc +')'}"></div>-->
-            <div class="movie-img" style="background:url('/assets/image/movie-2.png') 100% 100%"></div>
-            <figcaption class="hotel-info">
-              <h4 class="title">东方快车谋杀案</h4>
-              <div class="detail-box">
-                <p class="detail">导演： 张三</p>
-              </div>
-              <div class="star">
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <span>4.5分</span>
-              </div>
-              <div class="movie-class">
-                <div class="time">
-                  <svg class="icon-right-arrow">
-                    <use xlink:href="assets/icon/symbol-defs.svg#icon-clock"></use>
-                  </svg>
-                  120分钟
-                </div>
-                <span>动作</span>
-                <span>科幻</span>
-              </div>
-            </figcaption>
-          </figure>
-        </li>
+        <!--<li class="movie-item" appFastClick (onFastClick)="goPage('./movie-detail/1')">-->
+          <!--<figure class="movie-figure">-->
+            <!--&lt;!&ndash;<div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ hotel.imgSrc +')'}"></div>&ndash;&gt;-->
+            <!--<div class="movie-img" style="background:url('/assets/image/movie-2.png') 100% 100%"></div>-->
+            <!--<figcaption class="hotel-info">-->
+              <!--<h4 class="title">东方快车谋杀案</h4>-->
+              <!--<div class="detail-box">-->
+                <!--<p class="detail">导演： 张三</p>-->
+              <!--</div>-->
+              <!--<div class="star">-->
+                <!--<svg class="icon-right-arrow">-->
+                  <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+                <!--</svg>-->
+                <!--<svg class="icon-right-arrow">-->
+                  <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+                <!--</svg>-->
+                <!--<svg class="icon-right-arrow">-->
+                  <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+                <!--</svg>-->
+                <!--<svg class="icon-right-arrow">-->
+                  <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+                <!--</svg>-->
+                <!--<span>4.5分</span>-->
+              <!--</div>-->
+              <!--<div class="movie-class">-->
+                <!--<div class="time">-->
+                  <!--<svg class="icon-right-arrow">-->
+                    <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-clock"></use>-->
+                  <!--</svg>-->
+                  <!--120分钟-->
+                <!--</div>-->
+                <!--<span>动作</span>-->
+                <!--<span>科幻</span>-->
+              <!--</div>-->
+            <!--</figcaption>-->
+          <!--</figure>-->
+        <!--</li>-->
       </ul>
     </section>
-    <!--<app-banner></app-banner>-->
-    <!--<section class="main-entry">-->
-      <!--<div class="entry-cell" appFastClick (onFastClick)="goPage('/loan')">-->
-      <!--&lt;!&ndash;<div class="entry-cell" appFastClick (onFastClick)="goPage('/loan')">&ndash;&gt;-->
-        <!--<figure>-->
-          <!--<div class="icon-loan-box">-->
-            <!--<svg class="icon-loan">-->
-              <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-loan"></use>-->
-            <!--</svg>-->
-          <!--</div>-->
-          <!--<figcaption class="cell-info">-->
-            <!--<h4 class="main-info">我要贷款</h4>-->
-            <!--<p class="sub-info">1小时到账</p>-->
-          <!--</figcaption>-->
-        <!--</figure>-->
-      <!--</div>-->
-      <!--<div class="entry-cell" appFastClick (onFastClick)="goPage('/insurance')">-->
-      <!--&lt;!&ndash;<div class="entry-cell" appFastClick (onFastClick)="goPage($event, '/insurance')">&ndash;&gt;-->
-        <!--<figure>-->
-          <!--<div class="icon-insurance-box">-->
-            <!--<svg class="icon-insurance">-->
-              <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-insurance"></use>-->
-            <!--</svg>-->
-          <!--</div>-->
-          <!--<figcaption class="cell-info">-->
-            <!--<h4 class="main-info">我要保险</h4>-->
-            <!--<p class="sub-info">精选优惠产品</p>-->
-          <!--</figcaption>-->
-        <!--</figure>-->
-      <!--</div>-->
-    <!--</section>-->
-
-    <!--<section class="sub-entry">-->
-      <!--<figure class="entry-cell" appFastClick (onFastClick)="goPage('/calculator')">-->
-        <!--<svg class="icon-calculator">-->
-          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-calclator"></use>-->
-        <!--</svg>-->
-        <!--<figcaption class="cell-info">通用计算器</figcaption>-->
-      <!--</figure>-->
-      <!--<figure class="entry-cell">-->
-        <!--<svg class="icon-credit">-->
-          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-credit"></use>-->
-        <!--</svg>-->
-        <!--<figcaption class="cell-info">征信查询</figcaption>-->
-      <!--</figure>-->
-      <!--<figure class="entry-cell" appFastClick (onFastClick)="goPage('/rate')">-->
-        <!--<svg class="icon-interest">-->
-          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-interest"></use>-->
-        <!--</svg>-->
-        <!--<figcaption class="cell-info">贷款利率</figcaption>-->
-      <!--</figure>-->
-      <!--<figure class="entry-cell" appFastClick (onFastClick)="goPage('/bank')">-->
-        <!--<svg class="icon-bank">-->
-          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-bank"></use>-->
-        <!--</svg>-->
-        <!--<figcaption class="cell-info">信息服务</figcaption>-->
-      <!--</figure>-->
-    <!--</section>-->
-
-    <!--<section class="loan-panel" *ngIf="loanList.length > 2">-->
-      <!--<div class="panel-header">-->
-        <!--<div class="modify"></div>-->
-        <!--<h4 class="panel-title">热门产品</h4>-->
-        <!--<button class="more-btn" appFastClick (onFastClick)="goPage('/loan')">-->
-          <!--查看更多-->
-          <!--<svg class="icon-right-arrow">-->
-            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>-->
-          <!--</svg>-->
-        <!--</button>-->
-      <!--</div>-->
-      <!--<ul class="loan-list">-->
-        <!--<li class="loan-item" *ngFor="let loan of loanList" appFastClick (onFastClick)="goPage('./loan-detail/'+loan.id)">-->
-          <!--<figure class="loan-figure">-->
-            <!--<div class="loan-img" [ngStyle]="{'backgroundImage': 'url('+ loan.imgSrc +')'}"></div>-->
-            <!--<figcaption class="loan-info">-->
-              <!--<h4 class="title">{{loan.title}}</h4>-->
-              <!--<div class="detail-box">-->
-                <!--<p class="detail">{{loan.describe}}</p>-->
-                <!--<p *ngIf="loan.feeType === 1" class="interest"><em>{{loan.interest}}%</em>/天</p>-->
-                <!--<p *ngIf="loan.feeType === 2" class="interest"><em>{{loan.interest}}%</em>/月</p>-->
-                <!--<p *ngIf="loan.feeType === 3" class="interest"><em>{{loan.interest}}%</em>/年</p>-->
-              <!--</div>-->
-              <!--<div class="detail-box" [ngSwitch]="loan.typeId">-->
-                <!--<label class="label pretty" *ngSwitchCase="1">小额速贷</label>-->
-                <!--<label class="label large" *ngSwitchCase="2">大额贷</label>-->
-                <!--<label class="label car" *ngSwitchCase="3">购车贷</label>-->
-                <!--<p class="sum">最高<em>{{loan.debtMax}}</em>万额度</p>-->
-              <!--</div>-->
-            <!--</figcaption>-->
-          <!--</figure>-->
-        <!--</li>-->
-      <!--</ul>-->
-    <!--</section>-->
-
-    <!--<section class="insurance-panel" *ngIf="insuranceList.length  > 2">-->
-      <!--<div class="panel-header">-->
-        <!--<div class="modify"></div>-->
-        <!--<h4 class="panel-title">热门保险</h4>-->
-        <!--<button class="more-btn" appFastClick (onFastClick)="goPage('/insurance')">-->
-          <!--查看更多-->
-          <!--<svg class="icon-right-arrow">-->
-            <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>-->
-          <!--</svg>-->
-        <!--</button>-->
-      <!--</div>-->
-      <!--<ul class="panel-body">-->
-        <!--<li class="insurance-item" *ngFor="let ins of insuranceList" appFastClick (onFastClick)="openLinks(ins.targetUrl)">-->
-          <!--<figure class="insurance-figure">-->
-            <!--<div class="insurance-img" [ngStyle]="{'backgroundImage': 'url('+ ins.imgSrc +')'}"></div>-->
-            <!--<figcaption class="insurance-info">-->
-              <!--<h4 class="title">{{ins.title}}</h4>-->
-              <!--<p class="detail">{{ins.describe}}</p>-->
-              <!--<strong class="sub-detail">{{ins.subDescribe}}</strong>-->
-            <!--</figcaption>-->
-          <!--</figure>-->
-        <!--</li>-->
-      <!--</ul>-->
-    <!--</section>-->
   </div>
 </main>
 

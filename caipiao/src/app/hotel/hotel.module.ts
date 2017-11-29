@@ -5,7 +5,7 @@ import { IndexComponent } from './index/index.component';
 import { SharedModule } from '../shared/shared.module';
 import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
 
-
+import { HotelService } from '../service/hotel.service';
 
 @NgModule({
   imports: [ HotelRoutingModule, SharedModule ],
@@ -13,6 +13,6 @@ import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
     IndexComponent,
     HotelDetailComponent
   ],
-  // providers: [ UserService ]
+   providers: [ HotelService ]
 })
 export class HotelModule { }

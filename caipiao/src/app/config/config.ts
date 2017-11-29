@@ -5,7 +5,7 @@ export const DeviceConfig = {
 };
 
 export const ServiceInfo = {
-  appName: '白借钱',
+  appName: '彩票',
   tel: '4006963127',
   telFormat: '400-696-3127',
   wechat: 'jinrongchaoshi-kefu',

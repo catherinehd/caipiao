@@ -7,49 +7,15 @@
 
   <section class="hot-movie">
     <ul class="movie-list">
-      <!--<li class="hotel-item" *ngFor="let hotel of hotelList" appFastClick (onFastClick)="goPage('./hotel-detail/'+hotel.id)">-->
-      <li class="movie-item" appFastClick (onFastClick)="goPage('./movie-detail/1')">
+      <li class="movie" *ngFor="let movie of movieList" appFastClick (onFastClick)="goPage('./movie-detail/'+movie.id)">
+      <!--<li class="movie-item" appFastClick (onFastClick)="goPage('./movie-detail/1')">-->
         <figure class="movie-figure">
-          <!--<div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ hotel.imgSrc +')'}"></div>-->
-          <div class="movie-img" style="background:url('/assets/image/movie-1.png') 100% 100%"></div>
-          <figcaption class="hotel-info">
-            <h4 class="title">东方快车谋杀案东方快车谋杀案...</h4>
+          <div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ movie.pic +')'}"></div>
+          <!--<div class="movie-img" style="background:url('/assets/image/movie-1.png') 100% 100%"></div>-->
+          <figcaption class="movie-info">
+            <h4 class="title">{{movie.movie_name}}</h4>
             <div class="detail-box">
-              <p class="detail">导演： 张三</p>
-            </div>
-            <div class="star">
-              <svg class="icon-right-arrow">
-                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-              </svg>
-              <svg class="icon-right-arrow">
-                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-              </svg>
-              <svg class="icon-right-arrow">
-                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-              </svg>
-              <span>3.5分</span>
-            </div>
-            <div class="movie-class">
-              <div class="time">
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-clock"></use>
-                </svg>
-                120分钟
-              </div>
-              <span>动作</span>
-              <span>科幻</span>
-            </div>
-          </figcaption>
-        </figure>
-      </li>
-      <li class="movie-item" appFastClick (onFastClick)="goPage('./movie-detail/1')">
-        <figure class="movie-figure">
-          <!--<div class="hotel-img" [ngStyle]="{'backgroundImage': 'url('+ hotel.imgSrc +')'}"></div>-->
-          <div class="movie-img" style="background:url('/assets/image/movie-2.png') 100% 100%"></div>
-          <figcaption class="hotel-info">
-            <h4 class="title">东方快车谋杀案</h4>
-            <div class="detail-box">
-              <p class="detail">导演： 张三</p>
+              <p class="detail">主演： {{movie.targets}}</p>
             </div>
             <div class="star">
               <svg class="icon-right-arrow">
@@ -64,17 +30,29 @@
               <svg class="icon-right-arrow">
                 <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
               </svg>
-              <span>4.5分</span>
+              <svg class="icon-right-arrow">
+                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <svg class="icon-right-arrow">
+                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+              </svg><svg class="icon-right-arrow">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+            </svg>
+              <svg class="icon-right-arrow">
+                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+              </svg>
+
+              <span>{{movie.movie_score}}分</span>
             </div>
             <div class="movie-class">
               <div class="time">
                 <svg class="icon-right-arrow">
                   <use xlink:href="assets/icon/symbol-defs.svg#icon-clock"></use>
                 </svg>
-                120分钟
+                {{movie.times}}分钟
               </div>
-              <span>动作</span>
-              <span>科幻</span>
+              <!--<span>动作</span>-->
+              <!--<span>科幻</span>-->
             </div>
           </figcaption>
         </figure>

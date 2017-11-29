@@ -14,7 +14,6 @@ export class HttpService {
 
   getMethod(options: any) {
     const url = options.fullUrl || this.baseUrl + options.url;
-    console.log(url);
     const headers = new Headers({
       'Authorization': 'Bearer ' + window.localStorage.getItem('token'),
       'Content-Type': 'application/x-www-form-urlencoded'

@@ -5,7 +5,7 @@ import { IndexComponent } from './index/index.component';
 import { SharedModule } from '../shared/shared.module';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
-
+import { MovieService } from '../service/movie.service';
 
 @NgModule({
   imports: [ MovieRoutingModule, SharedModule ],
@@ -13,6 +13,6 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     IndexComponent,
     MovieDetailComponent
   ],
-  // providers: [ UserService ]
+   providers: [ MovieService ]
 })
 export class MovieModule { }

@@ -9,6 +9,11 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 import { DelayLeaveAnimation } from '../../shared/animations/delay-leave.animation';
 
+import { HotelService } from '../../service/hotel.service';
+import { HotelModel} from '../../model/hotel.model';
+import { MovieService} from '../../service/movie.service';
+import { NewsService } from '../../service/news.service';
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -23,15 +28,34 @@ export class IndexComponent implements OnInit {
   @HostBinding('@delayLeaveAnimation') delayLeaveAnimation = true;
   @HostBinding('class.page') page = true;
 
+  hotelList: HotelModel[] = [];
+  movieList: any[];
+  topNews: any;
+  title: string;
+
   constructor(private navigateService: NavigateService,
               private homeStoreService: HomeStoreService,
               private themableBrowserService: ThemableBrowserService,
-              private userStoreService: UserStoreService ) { }
+              private userStoreService: UserStoreService,
+              private hotelService: HotelService,
+              private newsService: NewsService,
+              private movieService: MovieService) { }
 
   ngOnInit() {
     // this.navigateService.clearRouteList();
     // this.getLoanList();
     // this.getInsuranceList();
+  this.newsService.getNewsList('最新').subscribe( res => {
+    this.topNews = res.json()[0];
+      this.topNews.path = this.topNews.path.replace(/\//g, '\\');
+      this.title = res.json()[0].title;
+  });
+   this.hotelService.getHotelList('', 1).subscribe( res => {
+     this.hotelList = (res.json().slice(0 , 5));
+   });
+   this.movieService.getMovieList('', 1).subscribe( res => {
+     this.movieList = (res.json().slice(0 , 5));
+   });
   }
 
   goPage(url) {

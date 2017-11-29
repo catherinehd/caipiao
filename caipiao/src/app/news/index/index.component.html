@@ -5,63 +5,23 @@
 
   <section class="news-box">
     <ul class="news-list">
-      <li class="news-item" appFastClick (onFastClick)="goPage('./news-detail/1')">
+      <li class="news-item" *ngFor="let news of newsList" appFastClick (onFastClick)="goPage('./news-detail/' + news.path)">
         <div>
           <div class="left">
             <div class="title">
-              酒店布草术语，酒店人，你懂吗？酒店布草术语，酒店人，你...
+              {{news.title}}
             </div>
             <div class="from-date">
               <span class="from">
-                来源：今日头条
+                来源：{{news.origin}}
               </span>
               <span class="date">
-                2017-11-10
+                {{news.timestamp}}
               </span>
             </div>
           </div>
           <div class="right">
-            <img src="assets/image/news-1.png" />
-          </div>
-        </div>
-      </li>
-      <li class="news-item" appFastClick (onFastClick)="goPage('./news-detail/1')">
-        <div>
-          <div class="left">
-            <div class="title">
-              《天才枪手》——最天才的创意，最蠢材的结尾。
-            </div>
-            <div class="from-date">
-              <span class="from">
-                来源：今日头条
-              </span>
-              <span class="date">
-                2017-11-10
-              </span>
-            </div>
-          </div>
-          <div class="right">
-            <img src="assets/image/news-2.png" />
-          </div>
-        </div>
-      </li>
-      <li class="news-item" appFastClick (onFastClick)="goPage('./news-detail/1')">
-        <div>
-          <div class="left">
-            <div class="title">
-              《天才枪手》——最天才的创意。
-            </div>
-            <div class="from-date">
-              <span class="from">
-                来源：今日头条
-              </span>
-              <span class="date">
-                2017-11-10
-              </span>
-            </div>
-          </div>
-          <div class="right">
-            <img src="assets/image/news-2.png" />
+            <img src={{news.img}} />
           </div>
         </div>
       </li>

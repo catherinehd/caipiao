@@ -1,6 +1,7 @@
 @import "../../../assets/css/variable.styl"
 
 main
+  padding-bottom 4.9rem
   .top-hotel
     background-size 100% !important
     height 17rem
@@ -92,8 +93,8 @@ main
   color $font-sub-color
   justify-content space-between
   .detail
-    height 1.1rem
-    margin-bottom 1rem
+    line-height 1.2
+    margin-bottom .5rem
   .book-num
     font-size 1.1rem
     color $theme-blue-color
@@ -105,4 +106,15 @@ main
   .cost
     font-size 1.8rem
     color $theme-red-color
+
+.hotel-info
+  position relative
+.last-detail-box
+  position absolute
+  bottom 0
+  width 100%
+  .book-num
+    line-height 1.8rem
+  .cost
+    text-align right
 
