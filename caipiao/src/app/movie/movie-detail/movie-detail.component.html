@@ -1,6 +1,6 @@
 <app-nav [title]="'电影详情页'" [showConfig]="{isArrowShow: true}"></app-nav>
 
-<div class="header-padding" appDevicePadding></div>
+<!--<div class="header-padding" appDevicePadding></div>-->
 <main class="movie-sec">
 
   <div class="detail">
@@ -12,27 +12,28 @@
       <p class="title">
         {{movieName}}
       </p>
-      <div class="star">
-        <svg class="icon-right-arrow">
-          <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-        </svg>
-        <svg class="icon-right-arrow">
-          <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-        </svg>
-        <svg class="icon-right-arrow">
-          <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-        </svg>
-        <svg class="icon-right-arrow">
-          <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-        </svg>
-        <span>{{score}}分</span>
-      </div>
+      <app-star [num]=score></app-star>
+      <!--<div class="star">-->
+        <!--<svg class="icon-right-arrow">-->
+          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+        <!--</svg>-->
+        <!--<svg class="icon-right-arrow">-->
+          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+        <!--</svg>-->
+        <!--<svg class="icon-right-arrow">-->
+          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+        <!--</svg>-->
+        <!--<svg class="icon-right-arrow">-->
+          <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+        <!--</svg>-->
+        <!--<span>{{score}}分</span>-->
+      <!--</div>-->
       <div class="class">
         类型：
         <span>{{targets}}</span>
       </div>
       <div class="howlong">
-        片长：{{times}}分钟
+        片长：{{times}}
       </div>
       <div class="onshow">
         上映： {{upTime}}
@@ -51,7 +52,7 @@
     <div class="title">
       短评
       <span class="num">
-        <svg class="icon-right-arrow">
+        <svg class="icon-right-arrow" (click)="write()">
                   <use xlink:href="assets/icon/symbol-defs.svg#icon-write"></use>
         </svg>
       </span>
@@ -64,21 +65,22 @@
             <div class="name">{{comment.user_name}}</div>
             <div class="dianping-num">
               打分
-              <div class="star">
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <span>{{comment.score}}分</span>
-              </div>
+              <app-star [num]=comment.score></app-star>
+              <!--<div class="star">-->
+                <!--<svg class="icon-right-arrow">-->
+                  <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+                <!--</svg>-->
+                <!--<svg class="icon-right-arrow">-->
+                  <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+                <!--</svg>-->
+                <!--<svg class="icon-right-arrow">-->
+                  <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+                <!--</svg>-->
+                <!--<svg class="icon-right-arrow">-->
+                  <!--<use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>-->
+                <!--</svg>-->
+                <!--<span>{{comment.score}}分</span>-->
+              <!--</div>-->
             </div>
             <div class="say">
               {{comment.content}}
@@ -96,3 +98,10 @@
   </section>
 </main>
 
+<div class="pinglun" *ngIf="ping">
+  <span class="close" (click)="ping = false">X</span>
+  <textarea placeholder="点评" [(ngModel)]="dianpingtext"></textarea>
+  <button (click)="submit()">提交</button>
+</div>
+
+<app-fly-msg [msg]="msg"></app-fly-msg>

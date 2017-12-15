@@ -64,7 +64,6 @@ export class IndexComponent implements OnInit {
   }
 
   canLoad() {
-    console.log('a');
     this.isLoading = true;
     this.getList(this.pageIndex = this.pageIndex + 1);
   }

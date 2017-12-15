@@ -1,6 +1,5 @@
 <app-nav [title]="'酒店详情页'" [showConfig]="{isArrowShow: true}"></app-nav>
 
-<div class="header-padding" appDevicePadding></div>
 <main class="hotel-sec">
   <!--<div class="top-hotel" style="background:url(' + {{topImg}} + ') 100% 100% no-repeat">-->
     <div class="top-hotel" [ngStyle]="{'background': 'url('+ topImg +') 100%'}">
@@ -11,7 +10,7 @@
       <div class="addr">地址： {{address}}</div>
     </div>
     <div class="right">
-      <a href="#">
+      <a href="javascript:void(0)">
         <svg class="icon-right-tel" >
           <use xlink:href="assets/icon/symbol-defs.svg#icon-tel"></use>
         </svg>
@@ -91,21 +90,7 @@
             <div class="name">{{item.user_name}}</div>
             <div class="dianping-num">
               打分
-              <div class="star">
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <span>{{item.score}}分</span>
-              </div>
+              <app-star [num]=item.score></app-star>
             </div>
             <div class="say">
               {{item.content}}
@@ -124,7 +109,8 @@
 
 <div class="qiandao" *ngIf="qiandao">签到成功!</div>
 <div class="pinglun" *ngIf="ping">
-  <input placeholder="点评">
+  <span class="close" (click)="ping = false">X</span>
+  <textarea placeholder="分享酒店交通，设施，服务，餐饮等方面体验。多写点评价对大家都有好处～" [(ngModel)]="dianpingtext"></textarea>
   <button (click)="submit()">提交</button>
 </div>
 

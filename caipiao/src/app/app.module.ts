@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+import { ThemableBrowserService } from './service/themeable-browser.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +24,7 @@ import { AppComponent } from './app.component';
     PersonModule, HomeModule, HotelModule, NewsModule, MovieModule, SearchModule, DianpingModule,
     AppRoutingModule,
   ],
+  providers: [ ThemableBrowserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

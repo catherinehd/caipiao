@@ -19,10 +19,16 @@ export class BannerComponent implements OnInit, OnDestroy {
               private userStoreService: UserStoreService ) { }
 
   ngOnInit() {
-    this.homeStoreService.getBanners().subscribe(banners => {
-      this.bannerList = banners;
-      setTimeout(() => this.initSwiper(), 0)
-    })
+    // this.homeStoreService.getBanners().subscribe(banners => {
+    //   this.bannerList = banners;
+    //   setTimeout(() => this.initSwiper(), 0)
+    // })
+    this.bannerList = [
+                       {id: 1, imgUrl: 'assets/image/banner1.png' , targetUrl: '' },
+                       {id: 2, imgUrl: 'assets/image/banner2.png' , targetUrl: '' },
+                       {id: 3, imgUrl: 'assets/image/banner3.png' , targetUrl: '' },
+                       ];
+    setTimeout(() => this.initSwiper(), 0);
   }
 
   ngOnDestroy() {

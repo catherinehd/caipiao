@@ -33,19 +33,7 @@ export class SettingComponent implements OnInit {
 
   logout() {
      this.userStoreService.logout();
-     this.servicefalseService.getFalsePage().subscribe( res => {
-       this.gohome(res.json());
-     })
-  }
-
-  gohome(ok) {
-    console.log(ok);
-    if (ok === true) {
-      this.navigateService.clearRouteList();
-      this.navigateService.pushToRoute('/homefalse');
-    } else {
-      this.navigateService.clearRouteList();
-      this.navigateService.pushToRoute('/home') ;
-    }
+    this.navigateService.clearRouteList();
+    this.navigateService.pushToRoute('/home') ;
   }
 }

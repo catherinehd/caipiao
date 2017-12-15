@@ -8,11 +8,9 @@ export class DeviceService {
   isApp: boolean;
   isIos: boolean;
   isAndroid: boolean;
-  falsepage = false;
 
   constructor(private servicefalseService: ServicefalseService) {
     this.getDeviceName();
-    this.gofalsepage();
   }
 
   getDeviceName() {
@@ -40,10 +38,4 @@ export class DeviceService {
     this.isIos = DeviceConfig.isIos;
   }
 
-  // 判断是否进入假页面
-  gofalsepage() {
-    this.servicefalseService.getFalsePage().subscribe( res => {
-      return this.falsepage = res.json();
-    })
-  }
 }

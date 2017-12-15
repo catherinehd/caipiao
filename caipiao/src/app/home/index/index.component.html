@@ -1,6 +1,6 @@
 <header class="nav form" appDevicePadding [formGroup]="searchForm">
   <input type="text" placeholder="找酒店、搜电影" formControlName="searchword"/>
-  <svg class="search-bth" appFastClick (onFastClick)="navSearch(searchForm.value.searchword)">
+  <svg class="search-bth" (click)="navSearch(searchForm.value.searchword)">
     <use xlink:href="assets/icon/symbol-defs.svg#icon-search"></use>
   </svg>
 </header>
@@ -10,11 +10,12 @@
 
   <!--<div [appRefresh]="refreshChild" (onRefresh)="refresh()" [isRefreshed]="isRefreshed">-->
   <div>
-    <img class="banner" src="/assets/image/banner.png" />
+    <!--<img class="banner" src="assets/image/banner.png" />-->
+    <app-banner></app-banner>
     <!--<app-refresh #refreshChild></app-refresh>-->
 
     <section class="top-news">
-      <img src="/assets/image/top-news.png" />
+      <img src="assets/image/top-news.png" />
       <div class="news" appFastClick (onFastClick)="goPage('./news-detail/' +  topNews.path)">
         {{title}}
       </div>
@@ -25,7 +26,7 @@
 
     <section class="hot-hotel">
       <div class="panel-header">
-        <img src="/assets/image/hotel2.png" />
+        <img src="assets/image/hotel2.png" />
         <h4 class="panel-title">热门酒店</h4>
         <button class="more-btn" appFastClick (onFastClick)="goPage('/hotel')">
           查看更多
@@ -45,18 +46,7 @@
               <div class="detail-box">
                 <p class="detail">地址： {{hotel.address}}</p>
               </div>
-              <div class="star">
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <span>{{hotel.score}}分</span>
-              </div>
+              <app-star [num]=hotel.score></app-star>
               <div class="detail-box last-detail-box">
                 <div class="book-num">
                   <svg class="icon-right-arrow">
@@ -74,7 +64,7 @@
 
     <section class="hot-movie">
       <div class="panel-header">
-        <img class="movie-img" src="/assets/image/movie.png" />
+        <img class="movie-img" src="assets/image/movie.png" />
         <h4 class="panel-title">热门影片</h4>
         <button class="more-btn" appFastClick (onFastClick)="goPage('/movie')">
           查看更多
@@ -94,18 +84,7 @@
               <div class="detail-box">
                 <p class="detail">主演： {{movie.targets}}</p>
               </div>
-              <div class="star">
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <svg class="icon-right-arrow">
-                  <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-                </svg>
-                <span>{{movie.movie_score}}分</span>
-              </div>
+              <app-star [num]=movie.movie_score></app-star>
               <div class="movie-class">
                 <div class="time">
                   <svg class="icon-right-arrow">

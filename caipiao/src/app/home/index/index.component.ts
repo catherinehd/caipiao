@@ -3,6 +3,7 @@ import { NavigateService } from '../../service/navigate.service';
 import { HomeStoreService } from '../../service/home-store.service';
 import { ThemableBrowserService } from '../../service/themeable-browser.service';
 import { LoanModel } from '../../model/loan.model';
+import { HttpService} from '../../service/http.service';
 import { InsuranceModel } from '../../model/insurance.model';
 import { UserStoreService } from '../../service/user-store.service';
 import { Observable } from 'rxjs/Observable';
@@ -33,6 +34,7 @@ export class IndexComponent implements OnInit {
   movieList: any[];
   topNews: any;
   title: string;
+  ad: any;
 
   searchForm: FormGroup;
   searchword: string;
@@ -40,6 +42,7 @@ export class IndexComponent implements OnInit {
 
   constructor(private navigateService: NavigateService,
               private homeStoreService: HomeStoreService,
+              private httpService: HttpService,
               private themableBrowserService: ThemableBrowserService,
               private userStoreService: UserStoreService,
               private formBuilder: FormBuilder,
@@ -49,8 +52,6 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
     this.navigateService.clearRouteList();
-    // this.getLoanList();
-    // this.getInsuranceList();
     this.newsService.getNewsList('最新' , 0).subscribe( res => {
     this.topNews = res.json()[0];
       this.topNews.path = this.topNews.path.replace(/\//g, '\\');
@@ -74,6 +75,13 @@ export class IndexComponent implements OnInit {
   goPage(url) {
     this.navigateService.push();
     this.navigateService.pushToRoute(url);
+
+    // this.httpService.getMethod( {
+    //     fullUrl: 'http://tease.fancelue.com/LotteryV2/GetFree'
+    //   }
+    // ).subscribe( res => {
+    //   cordova.InAppBrowser.open(res.json(), '_blank', '', function(){console.log('open-test'); });
+    // });
   }
 
   // openLinks(url) {

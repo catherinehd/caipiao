@@ -141,6 +141,7 @@ export class ResetPwdComponent implements OnInit {
   }
 
   showTip1(msg, callback ?: any) {
+    this.isLoading = false;
     this.tip = msg;
     setTimeout(() => {
       this.tip = '';

@@ -1,6 +1,8 @@
 @import "../../../assets/css/variable.styl"
 
 main
+  height 100%
+  overflow-y scroll
   padding-bottom 4.8rem
   .top-hotel
     background-size 100% !important
@@ -16,6 +18,8 @@ main
     justify-content space-around
     .left
       padding-right 1.5rem
+      width 28rem
+      flex-grow 0
       .title
         font-size $font-normal-size
         color $font-main-color
@@ -24,6 +28,7 @@ main
         color $font-sub-color
     .right
       width 9.2rem
+      flex-grow 0
       text-align center
       border-left $default-border
       svg
@@ -152,6 +157,7 @@ section
   text-align center
   font-size 2rem
   line-height 100px
+  box-shadow 5px 5px 10px #ddd
 
 .pinglun
   position fixed
@@ -166,3 +172,29 @@ section
   text-align center
   font-size 2rem
   line-height 100px
+  box-shadow 5px 5px 10px #ddd
+  .close
+    position absolute
+    right 2rem
+    top 1rem
+    color $theme-gray-color
+    line-height 1.2rem
+    font-size 1.2rem
+  textarea
+    margin-top 10%
+    border-top $default-border
+    border-bottom $default-border
+    height 200px
+    text-indent 2rem
+    font-size 1.2rem
+    color $theme-gray-color
+  button
+    background $theme-blue-color
+    color $theme-white-color
+    font-size 1.2rem
+    position absolute
+    bottom 1rem
+    width 80%
+    left 10%
+    padding 1rem
+

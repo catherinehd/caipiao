@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
 
 import { HotelRoutingModule } from './hotel-routing.module';
 import { IndexComponent } from './index/index.component';
@@ -8,7 +9,7 @@ import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
 import { HotelService } from '../service/hotel.service';
 
 @NgModule({
-  imports: [ HotelRoutingModule, SharedModule ],
+  imports: [ HotelRoutingModule, SharedModule, FormsModule ],
   declarations: [
     IndexComponent,
     HotelDetailComponent

@@ -28,6 +28,7 @@ import { FastClickDirective } from '../directives/fast-click.directive';
 import { TabfalseComponent } from './tabfalse/tabfalse.component';
 import { GjjpickerComponent } from './gjjpicker/gjjpicker.component';
 import { SearchComponent } from './search/search.component';
+import { StarComponent } from './star/star.component';
 
 @NgModule({
   imports: [ CommonModule, RouterModule ],
@@ -35,14 +36,14 @@ import { SearchComponent } from './search/search.component';
     ModalComponent, NavComponent, TabComponent, FlyMsgComponent, LoadingComponent, ListLoadingComponent,
     PageSlideDirective, TouchLoadingDirective, DevicePaddingDirective, TelFormatDirective, SameValidatorDirective,
     ElemHeightDirective, ElemMarginDirective, WindowTouchLoadingDirective, PickerDirective, RefreshDirective,
-    NumFixedPipe, PickerComponent, RefreshComponent, FastClickDirective, TabfalseComponent, GjjpickerComponent, SearchComponent
+    NumFixedPipe, PickerComponent, RefreshComponent, FastClickDirective, TabfalseComponent, GjjpickerComponent, SearchComponent, StarComponent
   ],
   exports: [
     CommonModule, ReactiveFormsModule, RouterModule,
     ModalComponent, NavComponent, TabComponent, FlyMsgComponent, LoadingComponent, ListLoadingComponent,
     PageSlideDirective, TouchLoadingDirective, DevicePaddingDirective, TelFormatDirective, SameValidatorDirective,
     ElemHeightDirective, ElemMarginDirective, WindowTouchLoadingDirective, PickerDirective, RefreshDirective,
-    NumFixedPipe, PickerComponent, RefreshComponent, FastClickDirective, TabfalseComponent, GjjpickerComponent
+    NumFixedPipe, PickerComponent, RefreshComponent, FastClickDirective, TabfalseComponent, GjjpickerComponent, StarComponent
   ]
 })
 

@@ -4,7 +4,8 @@ import { HttpService } from './http.service';
 @Injectable()
 export class HotelService {
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService) {
+  }
 
   getHotelList(key, page) {
     return this.httpService.getMethod({
@@ -17,7 +18,7 @@ export class HotelService {
   }
 
   getHotelDedail(id) {
-    return this.httpService.getMethod( {
+    return this.httpService.getMethod({
       url: 'LotteryV2/GetHotelInfo',
       data: {
         id: id,
@@ -26,7 +27,7 @@ export class HotelService {
   }
 
   getHotelComment(id, page) {
-    return this.httpService.getMethod( {
+    return this.httpService.getMethod({
       url: 'LotteryV2/GetHotelCommments',
       data: {
         id: id,
@@ -36,12 +37,13 @@ export class HotelService {
   }
 
   write(mobile, category, comment) {
-    return this.httpService.getMethod( {
-      url: 'LotteryV2/GetHotelCommments',
+    return this.httpService.getMethod({
+      url: 'LotteryV2/Comment',
       data: {
         mobile: mobile,
         category: category,
         comment: comment,
       }
     });
+  }
 }

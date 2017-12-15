@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { DeviceConfig } from '../config/config';
+import { DeviceService } from '../service/device.service';
 
 @Injectable()
 export class ThemableBrowserService {
   options: any;
-  constructor () {
+  constructor (private deviceService: DeviceService) {
     this.options = {
       statusbar: {
-        color: '#1079e1ff',
+        color: '#1db6f6',
       },
       toolbar: {
         height: 44,
-        color: '#1079e1ff'
+        color: '#1db6f6'
         // wwwImage: 'assets/image/toolbar.png',
         // wwwImageDensity: 2,
       },
@@ -41,7 +42,7 @@ export class ThemableBrowserService {
   }
 
   openOutLinksInApp(url) {
-    if ( !DeviceConfig.isApp ) {
+    if ( !this.deviceService.isApp ) {
       window.open(url);
       return;
     }

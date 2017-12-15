@@ -106,12 +106,8 @@ export class SettingPwdComponent implements OnInit {
         this.showTip('注册成功', () => {
           this.userStoreService.storeUser(response);
           this.navigateService.clearRouteList();
-          if(this.deviceService.falsepage = true) {
-            this.navigateService.pushToRoute('/homefalse');
-          } else {
-            this.navigateService.pushToRoute('/')
-          }
-        })
+          this.navigateService.pushToRoute('/');
+        });
       }
     });
   }

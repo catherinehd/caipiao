@@ -28,11 +28,7 @@ export class NavigateService {
       const lastRoute = this.routeList.pop();
       this.router.navigate([lastRoute]);
     } else {
-      if ( this.deviceService.falsepage === true ) {
-        this.router.navigate(['/homefalse']);
-      } else {
-        this.router.navigate(['/home']);
-      }
+      this.router.navigate(['/home']);
     }
   }
 

@@ -1,23 +1,12 @@
 <app-nav [title]="'酒店'" [showConfig]="{}"></app-nav>
 
-<div class="header-padding" appDevicePadding></div>
+<!--<div class="header-padding" appDevicePadding></div>-->
 <main class="hotel-sec" [appTouchLoading]="!isCompleted" (canLoad)="canLoad()">
   <!--<div class="top-hotel" style="background:url(topHotelImg) 100% 100% no-repeat">-->
   <div class="top-hotel" [ngStyle]="{'background': 'url('+ topHotelImg +') 100%'}">
     <div class="detail">
       <p class="hotel-title">{{topHotelTitle}}</p>
-      <div class="star">
-        <svg class="icon-right-arrow">
-          <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-        </svg>
-        <svg class="icon-right-arrow">
-          <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-        </svg>
-        <svg class="icon-right-arrow">
-          <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-        </svg>
-        <span>{{topHotelScore}}分</span>
-      </div>
+      <app-star [num]='4.6'></app-star>
     </div>
   </div>
 
@@ -33,18 +22,7 @@
             <div class="detail-box">
               <p class="detail">地址： {{hotel.address}}</p>
             </div>
-            <div class="star">
-              <svg class="icon-right-arrow">
-                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-              </svg>
-              <svg class="icon-right-arrow">
-                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-              </svg>
-              <svg class="icon-right-arrow">
-                <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
-              </svg>
-              <span>{{hotel.score}}分</span>
-            </div>
+            <app-star [num]=hotel.score></app-star>
             <div class="detail-box last-detail-box">
               <div class="book-num">
                 <svg class="icon-right-arrow">

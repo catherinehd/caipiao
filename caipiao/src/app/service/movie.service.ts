@@ -33,4 +33,15 @@ export class MovieService {
       }
     });
   }
+
+  write(mobile, category, comment) {
+    return this.httpService.getMethod({
+      url: 'LotteryV2/Comment',
+      data: {
+        mobile: mobile,
+        category: category,
+        comment: comment,
+      }
+    });
+  }
 }

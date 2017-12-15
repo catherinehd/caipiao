@@ -1,6 +1,6 @@
 <app-nav [title]="'个人中心'" [showConfig]="{}"></app-nav>
 
-<div class="header-padding" appDevicePadding></div>
+<!--<div class="header-padding" appDevicePadding></div>-->
 <header class="person-header login-header" appFastClick (onFastClick)="pushToUserInfo()">
   <img class="avatar" src="assets/image/tx.png">
   <h4 class="name" *ngIf="mobile && !nickName">{{mobile}}</h4>

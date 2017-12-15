@@ -1,0 +1,9 @@
+<div class="star" id="star-container">
+  <svg class="icon-right-arrow" *ngFor="let star of starList">
+    <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+  </svg>
+  <svg class="icon-right-arrow halfstar">
+    <use xlink:href="assets/icon/symbol-defs.svg#icon-star"></use>
+  </svg>
+  <span>{{this.num}}分</span>
+</div>
