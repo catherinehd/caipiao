@@ -30,10 +30,9 @@ export class AppComponent implements OnInit {
           this.ad = new Ad();
           this.ad.ad_func();
         });
-        this.navigateService.pushToRoute('./home');
-        // setTimeout(function(){
-        //   window.location.href = window.location.origin + '/home';
-        // }, 3000);
+        setTimeout(() => {
+          this.pushToFalsePage();
+        }, 3000);
       }
     } catch (e) {
       this.pushToFalsePage();
