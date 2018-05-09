@@ -8,7 +8,7 @@ export class MovieService {
 
   getMovieList(key, page) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/GetMovies',
+      url: 'Critique/GetMovies',
       data: {
         keyword: key,
         page: page,
@@ -18,7 +18,7 @@ export class MovieService {
 
   getMovieDedail(id) {
     return this.httpService.getMethod( {
-      url: 'LotteryV2/GetMovieInfo',
+      url: 'Critique/GetMovieInfo',
       data: {
         id: id,
       }
@@ -27,7 +27,7 @@ export class MovieService {
 
   getMovieComment(args) {
     return this.httpService.getMethod( {
-      url: 'LotteryV2/GetMovieComments',
+      url: 'Critique/GetMovieComments',
       data: {
         comment_args: args,
       }
@@ -36,7 +36,7 @@ export class MovieService {
 
   write(mobile, category, comment) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/Comment',
+      url: 'Critique/Comment',
       data: {
         mobile: mobile,
         category: category,

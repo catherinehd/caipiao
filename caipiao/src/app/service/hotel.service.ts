@@ -9,7 +9,7 @@ export class HotelService {
 
   getHotelList(key, page) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/GetHotels',
+      url: 'Critique/GetHotels',
       data: {
         keyword: key,
         page: page,
@@ -19,7 +19,7 @@ export class HotelService {
 
   getHotelDedail(id) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/GetHotelInfo',
+      url: 'Critique/GetHotelInfo',
       data: {
         id: id,
       }
@@ -28,7 +28,7 @@ export class HotelService {
 
   getHotelComment(id, page) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/GetHotelCommments',
+      url: 'Critique/GetHotelCommments',
       data: {
         id: id,
         page: page
@@ -38,7 +38,7 @@ export class HotelService {
 
   write(mobile, category, comment) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/Comment',
+      url: 'Critique/Comment',
       data: {
         mobile: mobile,
         category: category,

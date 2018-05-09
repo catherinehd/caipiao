@@ -8,7 +8,7 @@ export class UserService {
   // 登录
   login(mobile, loginPwd) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/login',
+      url: 'Critique/login',
       data: {
         mobile: mobile,
         password: loginPwd
@@ -19,7 +19,7 @@ export class UserService {
   // 注册
   register(mobile, loginPwd, code) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/register',
+      url: 'Critique/register',
       data: {
         mobile: mobile,
         password: loginPwd,
@@ -31,7 +31,7 @@ export class UserService {
   // 修改昵称
   updateNickName(mobile , nickName) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/setNickName',
+      url: 'Critique/setNickName',
       data: {
         mobile: mobile,
         nickname: nickName
@@ -39,10 +39,19 @@ export class UserService {
     });
   }
 
+  // 设置用户信息
+  setNickName(name, mobile, address) {
+    return this.httpService.getMethod( {
+      contact_name: name,
+      contact_mobile: mobile,
+      contact_address: address
+    });
+  }
+
   // 忘记密码
   updatePwd(mobile, password, code) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/ResetPassword',
+      url: 'Critique/ResetPassword',
       data: {
         mobile: mobile,
         password: password,
@@ -54,7 +63,7 @@ export class UserService {
   // 修改密码
   setPwd(mobile, password, newpassword) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/setPassword',
+      url: 'Critique/setPassword',
       data: {
         mobile: mobile,
         password: password,
@@ -104,11 +113,32 @@ export class UserService {
   // 获取短信验证码，不需要图片验证
   getCode(mobile) {
     return this.httpService.getMethod( {
-      url: 'LotteryV2/sendCode',
+      url: 'Critique/sendCode',
       data: {
         mobile: mobile
       }
-    })
+    });
   }
 
+  // 加积分
+  addintegral(mobile, score) {
+    return this.httpService.getMethod( {
+      url: 'Critique/AddScore',
+      data: {
+        mobile: mobile,
+        score: score
+      }
+    });
+  }
+
+  // 消费积分
+  userintegral(mobile, score) {
+    return this.httpService.getMethod( {
+      url: 'Critique/SubScore ',
+      data: {
+        mobile: mobile,
+        score: score
+      }
+    });
+  }
 }

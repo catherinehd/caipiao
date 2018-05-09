@@ -9,7 +9,7 @@ export class NewsService {
 
   getNewsList(key , page) {
     return this.httpService.getMethod({
-      url: 'LotteryV2/News',
+      url: 'Critique/News',
       data: {
         keyword: key,
         page: page,
@@ -19,7 +19,7 @@ export class NewsService {
 
   getNewsDedail(path) {
     return this.httpService.getMethod( {
-      url: 'LotteryV2/NewsInfo',
+      url: 'Critique/NewsInfo',
       data: {
         path: path,
       }

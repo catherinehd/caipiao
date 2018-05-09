@@ -4,8 +4,8 @@ import { DeviceService } from './service/device.service';
 import {AppComponent} from './app.component';
 
 const appRouters: Routes = [
-    // { path: '', redirectTo: 'home', pathMatch: 'full'}
-    { path: '', component: AppComponent }
+    { path: '', redirectTo: 'home', pathMatch: 'full'}
+    // { path: '', component: AppComponent }
 ];
 
 @NgModule({

@@ -18,11 +18,11 @@ export class IndexComponent {
     const user = this.userStoreService.getUser();
     this.nickName = user ? user.nickName : '';
     this.mobile = user ? user.mobile : '';
-    if(this.mobile) {
+    if (this.mobile) {
       this.mobile = this.mobile.substring(0, 3 ) + '****' + this.mobile.substring(7) ;
     } else {
       this.mobile = '' ;
-    };
+    }
   }
 
   goPage(page) {

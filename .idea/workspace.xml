@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="84812d64-f60f-4dd6-bedb-27c59fdb626e" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/caipiao/src/app/service/gofalsepage.service.spec.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/caipiao/src/app/service/gofalsepage.service.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/caipiao/src/assets/image/banner.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/app-routing.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/app.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/app.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/app.module.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/app.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/config/config.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/config/config.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/dianping/index/index.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/dianping/index/index.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/dianping/input-dianping/input-dianping.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/dianping/input-dianping/input-dianping.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/home/banner/banner.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/home/banner/banner.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/home/index/index.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/home/index/index.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/home/index/index.component.styl" afterPath="$PROJECT_DIR$/caipiao/src/app/home/index/index.component.styl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/home/index/index.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/home/index/index.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/hotel/hotel-detail/hotel-detail.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/hotel/hotel-detail/hotel-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/hotel/hotel-detail/hotel-detail.component.styl" afterPath="$PROJECT_DIR$/caipiao/src/app/hotel/hotel-detail/hotel-detail.component.styl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/hotel/hotel-detail/hotel-detail.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/hotel/hotel-detail/hotel-detail.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/hotel/hotel.module.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/hotel/hotel.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/hotel/index/index.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/hotel/index/index.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/hotel/index/index.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/hotel/index/index.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/movie/index/index.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/movie/index/index.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/movie/index/index.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/movie/index/index.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/movie/movie-detail/movie-detail.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/movie/movie-detail/movie-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/movie/movie-detail/movie-detail.component.styl" afterPath="$PROJECT_DIR$/caipiao/src/app/movie/movie-detail/movie-detail.component.styl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/movie/movie-detail/movie-detail.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/movie/movie-detail/movie-detail.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/movie/movie.module.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/movie/movie.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/news/index/index.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/news/index/index.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/news/index/index.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/news/index/index.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/news/news-detail/news-detail.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/news/news-detail/news-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/news/news-detail/news-detail.component.styl" afterPath="$PROJECT_DIR$/caipiao/src/app/news/news-detail/news-detail.component.styl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/person/about-us/about-us.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/person/about-us/about-us.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/person/index/index.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/person/index/index.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/person/reset-pwd/reset-pwd.component.html" afterPath="$PROJECT_DIR$/caipiao/src/app/person/reset-pwd/reset-pwd.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/person/reset-pwd/reset-pwd.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/person/reset-pwd/reset-pwd.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/person/setting-pwd/setting-pwd.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/person/setting-pwd/setting-pwd.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/person/setting/setting.component.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/person/setting/setting.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/service/device.service.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/service/device.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/service/hotel.service.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/service/hotel.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/service/movie.service.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/service/movie.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/service/navigate.service.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/service/navigate.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/service/themeable-browser.service.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/service/themeable-browser.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/service/user-store.service.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/service/user-store.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/app/shared/shared.module.ts" afterPath="$PROJECT_DIR$/caipiao/src/app/shared/shared.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/assets/css/styles.styl" afterPath="$PROJECT_DIR$/caipiao/src/assets/css/styles.styl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/caipiao/src/index.html" afterPath="$PROJECT_DIR$/caipiao/src/index.html" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../star/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1915" />
+    <option name="y" value="91" />
+    <option name="width" value="1636" />
+    <option name="height" value="1255" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="caipiao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="caipiao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="caipiao" type="b2602c69:ProjectViewProjectNode" />
+              <item name="caipiao" type="462c0819:PsiDirectoryNode" />
+              <item name="caipiao" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84812d64-f60f-4dd6-bedb-27c59fdb626e" name="Default" comment="" />
+      <created>1512524922657</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1512524922657</updated>
+      <workItem from="1512524924058" duration="7000" />
+      <workItem from="1513042362865" duration="25000" />
+      <workItem from="1513042397475" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="37000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1915" y="91" width="1636" height="1255" extended-state="0" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2495356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../star/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../star/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

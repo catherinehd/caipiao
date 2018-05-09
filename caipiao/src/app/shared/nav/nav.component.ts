@@ -14,6 +14,7 @@ export class NavComponent implements OnInit {
   @Input() showConfig: ShowConfig;
   @Output() onSave = new EventEmitter();
   @Output() onShowQues = new EventEmitter();
+  @Output() onDetail = new EventEmitter();
   constructor(private navigateService: NavigateService) { }
 
   ngOnInit() {
@@ -25,7 +26,7 @@ export class NavComponent implements OnInit {
 
   pushToRegister() {
     this.navigateService.push();
-    this.navigateService.pushToRoute('/register/tel-valid')
+    this.navigateService.pushToRoute('/register/tel-valid');
   }
 
   save() {
@@ -35,6 +36,10 @@ export class NavComponent implements OnInit {
   showQues() {
     this.onShowQues.emit();
   }
+
+  detail() {
+    this.onDetail.emit();
+  }
 }
 
 class ShowConfig {
@@ -43,5 +48,6 @@ class ShowConfig {
               public isRegisterShow ?: boolean,
               public isQuesShow?: boolean,
               public isCancelShow?: boolean,
+              public isDetailShow?: boolean,
               public isSaveShow?: boolean) {}
 }

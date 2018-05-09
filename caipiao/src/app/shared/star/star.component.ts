@@ -13,7 +13,6 @@ export class StarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.num);
     if (String(this.num).indexOf('.') > -1) {
       this.halfstar = true;
       this.starList = [];

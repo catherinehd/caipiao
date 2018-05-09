@@ -9,6 +9,7 @@
   <h1 class="title">{{title}}</h1>
   <button class="right-btn" *ngIf="showConfig.isRegisterShow" appFastClick (onFastClick)="pushToRegister()">注册</button>
   <button class="right-btn" *ngIf="showConfig.isSaveShow" appFastClick (onFastClick)="save()">保存</button>
+  <button class="right-btn" *ngIf="showConfig.isDetailShow" appFastClick (onFastClick)="detail()">明细</button>
   <button class="right-btn ques" *ngIf="showConfig.isQuesShow" appFastClick (onFastClick)="showQues()">问题?</button>
 </header>
 <div class="nav-bg" appDevicePadding></div>

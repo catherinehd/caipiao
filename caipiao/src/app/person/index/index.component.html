@@ -13,6 +13,17 @@
 
 <main class="person-main">
   <ul class="nav-list">
+    <li class="nav-item" appFastClick (onFastClick)="goPage('/huolizhi')">
+      <div class="item-box">
+        <svg class="icon-huolizhi">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-huolizhi"></use>
+        </svg>
+        <p class="title">活力值</p>
+        <svg class="icon-right-arrow">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-right-arrow"></use>
+        </svg>
+      </div>
+    </li>
     <li class="nav-item" appFastClick (onFastClick)="goPage('/reset-pwd')">
       <div class="item-box">
         <svg class="icon-pw">

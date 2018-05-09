@@ -14,6 +14,7 @@ import { ServiceComponent } from './service/service.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { SettingPersonalInfoComponent } from './setting-personal-info/setting-personal-info.component';
 import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
+import { HuolizhiComponent } from './huolizhi/huolizhi.component';
 
 
 const personRoutes: Routes = [
@@ -31,7 +32,8 @@ const personRoutes: Routes = [
   { path: 'personal-info', component: PersonalInfoComponent, canActivate: [AuthGuard] },
   { path: 'setting-personal-info', component: SettingPersonalInfoComponent, canActivate: [AuthGuard] },
   { path: 'reset-pwd', component: ResetPwdComponent, canActivate: [AuthGuard]},
-  { path: 'forget-pwd/:mobile/:code', component: ResetPwdComponent }
+  { path: 'forget-pwd/:mobile/:code', component: ResetPwdComponent },
+  { path: 'huolizhi', component: HuolizhiComponent}
 ];
 
 @NgModule({

@@ -18,12 +18,13 @@ import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { SettingPersonalInfoComponent } from './setting-personal-info/setting-personal-info.component';
 import { UserService } from '../service/user.service';
 import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
+import { HuolizhiComponent } from './huolizhi/huolizhi.component';
 
 @NgModule({
   imports: [ PersonRoutingModule, SharedModule ],
   declarations: [
     LoginComponent, RegisterComponent, SettingPwdComponent, TelValidComponent, ImgValidComponent,
-    IndexComponent, AgreementComponent, SettingComponent, AboutUsComponent, HelpComponent, ServiceComponent, PersonalInfoComponent, SettingPersonalInfoComponent, ResetPwdComponent
+    IndexComponent, AgreementComponent, SettingComponent, AboutUsComponent, HelpComponent, ServiceComponent, PersonalInfoComponent, SettingPersonalInfoComponent, ResetPwdComponent, HuolizhiComponent
   ],
   providers: [ UserService ]
 })
